@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iit SYSTEM "bhavans.dtd">
+
+<iit>
+	<volume>
+		<part pnum="003">
+			<entry>
+				<title>Editorial</title>
+				<feature />
+				<authors />
+				<page>0009-0010</page>
+			</entry>
+			<entry>
+				<title>Message</title>
+				<feature />
+				<authors>
+					<author>Prof. B. Sengupto</author>
+				</authors>
+				<page>0011-0011</page>
+			</entry>
+			<entry>
+				<title>An Extract</title>
+				<feature />
+				<authors />
+				<page>0013-0013</page>
+			</entry>
+			<entry>
+				<title>At the Circus</title>
+				<feature />
+				<authors>
+					<author>Dr. Th. Ramachandran</author>
+				</authors>
+				<page>0014-0018</page>
+			</entry>
+			<entry>
+				<title>The Canteen</title>
+				<feature />
+				<authors>
+					<author>G. Viswanathan</author>
+				</authors>
+				<page>0018-0018</page>
+			</entry>
+			<entry>
+				<title>Damn the Congo</title>
+				<feature />
+				<authors>
+					<author>T. S. Ananthu</author>
+					<author>K. M. Kripanarayanan</author>
+				</authors>
+				<page>0019-0021</page>
+			</entry>
+			<entry>
+				<title>Dejections</title>
+				<feature />
+				<authors />
+				<page>0022-0022</page>
+			</entry>
+			<entry>
+				<title>Noises</title>
+				<feature />
+				<authors>
+					<author>V. K. Vedapuri</author>
+				</authors>
+				<page>0025-0025</page>
+			</entry>
+			<entry>
+				<title>Rock Climbing</title>
+				<feature />
+				<authors>
+					<author>C. V. Seshadri</author>
+				</authors>
+				<page>0026-0030</page>
+			</entry>
+			<entry>
+				<title>For Official Use Only</title>
+				<feature />
+				<authors>
+					<author>T. S. R.</author>
+				</authors>
+				<page>0031-0032</page>
+			</entry>
+			<entry>
+				<title>Balmy Days at Brisbane</title>
+				<feature />
+				<authors>
+					<author>R. Natarajan</author>
+				</authors>
+				<page>0033-0037</page>
+			</entry>
+			<entry>
+				<title>The First Five Year Plan</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0038-0038</page>
+			</entry>
+			<entry>
+				<title>Summer</title>
+				<feature />
+				<authors>
+					<author>G. Viswanathan</author>
+				</authors>
+				<page>0038-0038</page>
+			</entry>
+			<entry>
+				<title>A Wish Granted</title>
+				<feature />
+				<authors>
+					<author>K. M. Kripanarayanan</author>
+				</authors>
+				<page>0039-0040</page>
+			</entry>
+			<entry>
+				<title>Impressions</title>
+				<feature />
+				<authors>
+					<author>J. C. Camillus</author>
+				</authors>
+				<page>0040-0040</page>
+			</entry>
+			<entry>
+				<title>Ashta Graha</title>
+				<feature />
+				<authors>
+					<author>R. T. Narayanan</author>
+				</authors>
+				<page>0041-0041</page>
+			</entry>
+			<entry>
+				<title>Grades are Sour</title>
+				<feature />
+				<authors>
+					<author>T. S. Ananthu</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>The Engineer's Wand - A Fantasy</title>
+				<feature />
+				<authors>
+					<author>P. Mohan</author>
+				</authors>
+				<page>0042-0045</page>
+			</entry>
+			<entry>
+				<title>The Road to I.I.T.</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0046-0046</page>
+			</entry>
+			<entry>
+				<title>A Novel Souvenir</title>
+				<feature />
+				<authors>
+					<author>Dr. V. Anantaraman</author>
+				</authors>
+				<page>0047-0049</page>
+			</entry>
+			<entry>
+				<title>The Timachine</title>
+				<feature />
+				<authors>
+					<author>Sudhir Puri</author>
+				</authors>
+				<page>0050-0052</page>
+			</entry>
+			<entry>
+				<title>German Language</title>
+				<feature />
+				<authors>
+					<author>M. Venkateswara Rao</author>
+				</authors>
+				<page>0053-0053</page>
+			</entry>
+			<entry>
+				<title>If I were the Creator</title>
+				<feature />
+				<authors>
+					<author>D. D. Samuel</author>
+				</authors>
+				<page>0054-0000</page>
+			</entry>
+			<entry>
+				<title>The Buddha</title>
+				<feature />
+				<authors>
+					<author>G. Viswanathan</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>Defence of our Motherland</title>
+				<feature />
+				<authors>
+					<author>R. Prabhakar</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>The Gestetner Civilisation</title>
+				<feature />
+				<authors>
+					<author>Dr. Th. Ramachandran</author>
+				</authors>
+				<page>0058-0059</page>
+			</entry>
+			<entry>
+				<title>Fly</title>
+				<feature />
+				<authors>
+					<author>N. Ramesh</author>
+				</authors>
+				<page>0059-0059</page>
+			</entry>
+			<entry>
+				<title>A Pet Problem</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>The Aromatic River</title>
+				<feature />
+				<authors>
+					<author>R. T. narayanan</author>
+				</authors>
+				<page>0060-0060</page>
+			</entry>
+			<entry>
+				<title>A Portrait of Nehru</title>
+				<feature />
+				<authors>
+					<author>M. A. Abdul Khader</author>
+				</authors>
+				<page>0061-0062</page>
+			</entry>
+			<entry>
+				<title>The Quaint ways in British Parliament</title>
+				<feature />
+				<authors>
+					<author>S. Seshadri</author>
+				</authors>
+				<page>0063-0070</page>
+			</entry>
+			<entry>
+				<title>The Chemistry of an Engineer</title>
+				<feature />
+				<authors>
+					<author>K. Koteeswaran</author>
+				</authors>
+				<page>0071-0072</page>
+			</entry>
+			<entry>
+				<title>I.I.T. Through Photographs</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0075-0078</page>
+			</entry>
+			<entry>
+				<title>I.I.T. Through Cartoons</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0079-0079</page>
+			</entry>
+			<entry>
+				<title>Institute Gymkhana</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0080-0087</page>
+			</entry>
+			<entry>
+				<title>Chronicle</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0088-0091</page>
+			</entry>
+			<entry>
+				<title>A Distinguished visitor to our Campus</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0092-0092</page>
+			</entry>
+			<entry>
+				<title>Faculty Association</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0093-0093</page>
+			</entry>
+			<entry>
+				<title>I.I.T. Co-operative Stores</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>Students Aid Fund</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>Hostels</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0094-0094</page>
+			</entry>
+			<entry>
+				<title>I.I.T. Employees Co-operative Housing Society Ltd.</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0095-0095</page>
+			</entry>
+			<entry>
+				<title>Tech - Out</title>
+				<feature>Campus News</feature>
+				<authors>
+					<author>C. V. S.</author>
+				</authors>
+				<page>0096-0096</page>
+			</entry>
+			<entry>
+				<title>Report on the Inter&#8212;I.I.T. Sports Meet</title>
+				<feature>Campus News</feature>
+				<authors>
+					<author>S. A. Aleem</author>
+				</authors>
+				<page>0099-0099</page>
+			</entry>
+			<entry>
+				<title>N. C. C. Rifles</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0100-0000</page>
+			</entry>
+			<entry>
+				<title>Our Library</title>
+				<feature>Campus News</feature>
+				<authors />
+				<page>0104-0104</page>
+			</entry>
+			<entry>
+				<title>Pink Pages</title>
+				<authors />
+				<page>0105-0121</page>
+			</entry>
+		</part>
+		<part pnum="004">
+			<entry>
+				<title>Message</title>
+				<feature />
+				<authors>
+					<author>Prof. B. Sengupto</author>
+				</authors>
+				<page>0007-0007</page>
+			</entry>
+			<entry>
+				<title>Editorial</title>
+				<feature />
+				<authors />
+				<page>0011-0012</page>
+			</entry>
+			<entry>
+				<title>Dr. H. C. Heinrich Luebke</title>
+				<feature />
+				<authors>
+					<author>N. Klein</author>
+				</authors>
+				<page>0015-0016</page>
+			</entry>
+			<entry>
+				<title>A Resolve</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0016-0016</page>
+			</entry>
+			<entry>
+				<title>Keys</title>
+				<feature />
+				<authors>
+					<author>S. Nageshwar</author>
+				</authors>
+				<page>0017-0019</page>
+			</entry>
+			<entry>
+				<title>Why did the Chinese attack us</title>
+				<feature />
+				<authors>
+					<author>T. S. Ananthu</author>
+				</authors>
+				<page>0020-0028</page>
+			</entry>
+			<entry>
+				<title>Long in Delay</title>
+				<feature />
+				<authors>
+					<author>N. Ramesh</author>
+				</authors>
+				<page>0029-0029</page>
+			</entry>
+			<entry>
+				<title>Rewriting Indian History</title>
+				<feature />
+				<authors>
+					<author>M. S. Vairana Pillai</author>
+				</authors>
+				<page>0030-0033</page>
+			</entry>
+			<entry>
+				<title>Was there Love</title>
+				<feature />
+				<authors>
+					<author>N. Ramesh</author>
+				</authors>
+				<page>0033-0033</page>
+			</entry>
+			<entry>
+				<title>Ah! That Unnecessary Evil</title>
+				<feature />
+				<authors>
+					<author>G. T. Sundararajan</author>
+				</authors>
+				<page>0034-0000</page>
+			</entry>
+			<entry>
+				<title>Emotions and Human Behaviour</title>
+				<feature />
+				<authors>
+					<author>V. Ranganathan</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>A Sonnet on Vivekananda</title>
+				<feature />
+				<authors>
+					<author>G. Viswanathan</author>
+				</authors>
+				<page>0038-0038</page>
+			</entry>
+			<entry>
+				<title>Stumped</title>
+				<feature />
+				<authors>
+					<author>M. Vikram Rao</author>
+				</authors>
+				<page>0039-0043</page>
+			</entry>
+			<entry>
+				<title>The Society of the Invisible Intellectuals</title>
+				<feature />
+				<authors>
+					<author>D. D. Samuel</author>
+				</authors>
+				<page>0044-0047</page>
+			</entry>
+			<entry>
+				<title>On Neutrality</title>
+				<feature />
+				<authors>
+					<author>T. V. G. Krishnamurthy</author>
+					<author>D. B. Venkateswaralu</author>
+				</authors>
+				<page>0048-0050</page>
+			</entry>
+			<entry>
+				<title>The Panther from Baroda</title>
+				<feature />
+				<authors>
+					<author>R. Natarajan</author>
+				</authors>
+				<page>0053-0055</page>
+			</entry>
+			<entry>
+				<title>One more N</title>
+				<feature />
+				<authors>
+					<author>Nandakumar R. Dave</author>
+				</authors>
+				<page>0056-0058</page>
+			</entry>
+			<entry>
+				<title>The Absent Minded Engineer</title>
+				<feature />
+				<authors>
+					<author>V. Koteeswaran</author>
+				</authors>
+				<page>0061-0063</page>
+			</entry>
+			<entry>
+				<title>No man is an island</title>
+				<feature />
+				<authors>
+					<author>Umbra</author>
+				</authors>
+				<page>0064-0071</page>
+			</entry>
+			<entry>
+				<title>Twilight in the Campus</title>
+				<feature />
+				<authors>
+					<author>Umbra</author>
+				</authors>
+				<page>0071-0071</page>
+			</entry>
+			<entry>
+				<title>K vs. K</title>
+				<feature />
+				<authors>
+					<author>J. C. Camillus</author>
+				</authors>
+				<page>0072-0074</page>
+			</entry>
+			<entry>
+				<title>The Opium Den</title>
+				<feature />
+				<authors>
+					<author>P. Mohan</author>
+				</authors>
+				<page>0074-0074</page>
+			</entry>
+			<entry>
+				<title>Some Reflections on Inertia</title>
+				<feature />
+				<authors>
+					<author>D. V. Reddy</author>
+				</authors>
+				<page>0077-0079</page>
+			</entry>
+			<entry>
+				<title>Be Happy</title>
+				<feature />
+				<authors>
+					<author>K. V. Rangaswamy</author>
+				</authors>
+				<page>0080-0081</page>
+			</entry>
+			<entry>
+				<title>Alien in One's own land</title>
+				<feature />
+				<authors>
+					<author>Th. Ramachandran</author>
+				</authors>
+				<page>0082-0084</page>
+			</entry>
+			<entry>
+				<title>This is Delhi</title>
+				<feature />
+				<authors>
+					<author>R. A. Vaswani</author>
+				</authors>
+				<page>0085-0087</page>
+			</entry>
+			<entry>
+				<title>Our Library</title>
+				<feature />
+				<authors>
+					<author>G. Viswanathan</author>
+				</authors>
+				<page>0088-0088</page>
+			</entry>
+			<entry>
+				<title>World's Scriptures</title>
+				<feature />
+				<authors>
+					<author>V. K. Vedapuri</author>
+				</authors>
+				<page>0095-0100</page>
+			</entry>
+			<entry>
+				<title>Viper, Thy Neighbour</title>
+				<feature />
+				<authors>
+					<author>T. S. R.</author>
+				</authors>
+				<page>0103-0103</page>
+			</entry>
+			<entry>
+				<title>I Hiss</title>
+				<feature />
+				<authors>
+					<author>Snake</author>
+				</authors>
+				<page>0104-0105</page>
+			</entry>
+			<entry>
+				<title>Jest Before Justice</title>
+				<feature />
+				<authors>
+					<author>S. Srikant</author>
+				</authors>
+				<page>0106-0113</page>
+			</entry>
+			<entry>
+				<title>Perennial Flower</title>
+				<feature />
+				<authors>
+					<author>Venugopal</author>
+				</authors>
+				<page>0114-0114</page>
+			</entry>
+			<entry>
+				<title>The Atom</title>
+				<feature />
+				<authors>
+					<author>S. Sreenivasan</author>
+				</authors>
+				<page>0117-0117</page>
+			</entry>
+			<entry>
+				<title>3rd December 1962&#8212;A Red Letter Day</title>
+				<feature />
+				<authors>
+					<author>Prof. R. Krishnamurthi</author>
+				</authors>
+				<page>0118-0126</page>
+			</entry>
+			<entry>
+				<title>Reports&#8212;Yellow Pages</title>
+				<feature />
+				<authors />
+				<page>0127-0129</page>
+			</entry>
+			<entry>
+				<title>Advertisement&#8212;Pink Pages</title>
+				<feature />
+				<authors />
+				<page>0177-0182</page>
+			</entry>
+		</part>
+		<part pnum="005">
+			<entry>
+				<title>Message</title>
+				<feature />
+				<authors>
+					<author>Gerhard Fischer</author>
+				</authors>
+				<page>0005-0006</page>
+			</entry>
+			<entry>
+				<title>Editorial</title>
+				<feature />
+				<authors />
+				<page>0009-0010</page>
+			</entry>
+			<entry>
+				<title>Peep into a Project</title>
+				<feature />
+				<authors>
+					<author>Prof. B. Sengupto</author>
+				</authors>
+				<page>0011-0022</page>
+			</entry>
+			<entry>
+				<title>Impact of Engineering on Society</title>
+				<feature />
+				<authors>
+					<author>Shri K. Ramachandra</author>
+				</authors>
+				<page>0023-0028</page>
+			</entry>
+			<entry>
+				<title>The Kennedy Effect</title>
+				<feature />
+				<authors>
+					<author>Shri T. S. Ananthu</author>
+				</authors>
+				<page>0029-0033</page>
+			</entry>
+			<entry>
+				<title>Human Rights</title>
+				<feature />
+				<authors>
+					<author>Shri R. Natarajan</author>
+				</authors>
+				<page>0034-0000</page>
+			</entry>
+			<entry>
+				<title>A Poem</title>
+				<feature />
+				<authors>
+					<author>Shri. S. R. Sivaramakrishnan</author>
+					<author>Shri R. Subramanian</author>
+				</authors>
+				<page>0040-0043</page>
+			</entry>
+			<entry>
+				<title>Time and Tide</title>
+				<feature />
+				<authors>
+					<author>Prof. B. Sengupto</author>
+				</authors>
+				<page>0044-0048</page>
+			</entry>
+			<entry>
+				<title>Random Thoughts on Indian History</title>
+				<feature />
+				<authors>
+					<author>Shri R. V. S. Mani</author>
+				</authors>
+				<page>0049-0051</page>
+			</entry>
+			<entry>
+				<title>Accidents Don't Just Happen</title>
+				<feature />
+				<authors>
+					<author>Shri S. K. Kazi</author>
+				</authors>
+				<page>0052-0054</page>
+			</entry>
+			<entry>
+				<title>Congress in Artificial Atmosphere</title>
+				<feature />
+				<authors>
+					<author>Shri P. Poornanjaneya Sastry</author>
+				</authors>
+				<page>0055-0058</page>
+			</entry>
+			<entry>
+				<title>All in the game (Cartoons)</title>
+				<feature />
+				<authors>
+					<author>Shri Philip Dhinakaran</author>
+				</authors>
+				<page>0059-0061</page>
+			</entry>
+			<entry>
+				<title>The Last Hour of the Morning</title>
+				<feature />
+				<authors>
+					<author>Shri B. Madhusudan Menon</author>
+				</authors>
+				<page>0063-0067</page>
+			</entry>
+			<entry>
+				<title>Patriot and Prophet</title>
+				<feature />
+				<authors>
+					<author>Shri V. K. Vedapuri</author>
+				</authors>
+				<page>0062-0062</page>
+			</entry>
+			<entry>
+				<title>On Faith</title>
+				<feature />
+				<authors>
+					<author>Dr. T. Gopichand</author>
+				</authors>
+				<page>0068-0069</page>
+			</entry>
+			<entry>
+				<title>Sparks from the Accounts Anvil</title>
+				<feature />
+				<authors>
+					<author>Shri G. T. Sundararajan</author>
+				</authors>
+				<page>0074-0075</page>
+			</entry>
+			<entry>
+				<title>Two Poems</title>
+				<feature />
+				<authors>
+					<author>Shri A. Anantharama Iyer</author>
+				</authors>
+				<page>0076-0077</page>
+			</entry>
+			<entry>
+				<title>Destiny Steers Ambition</title>
+				<feature />
+				<authors>
+					<author>Shri D. D. Samuel</author>
+				</authors>
+				<page>0078-0080</page>
+			</entry>
+			<entry>
+				<title>A Story of History</title>
+				<feature />
+				<authors>
+					<author>Shri M. Venkateswara Rao</author>
+				</authors>
+				<page>0081-0083</page>
+			</entry>
+			<entry>
+				<title>Nosegay</title>
+				<feature />
+				<authors>
+					<author>Shri K. Narayanan</author>
+				</authors>
+				<page>0084-0092</page>
+			</entry>
+			<entry>
+				<title>The Newest Religion</title>
+				<feature />
+				<authors>
+					<author>Shri T. S. Ananthu</author>
+				</authors>
+				<page>0093-0097</page>
+			</entry>
+			<entry>
+				<title>Three Poems</title>
+				<feature />
+				<authors>
+					<author>Shri E. S. Bhagiratha Rao</author>
+				</authors>
+				<page>0098-0099</page>
+			</entry>
+			<entry>
+				<title>Superstition</title>
+				<feature />
+				<authors>
+					<author>Shri M. Vikram Rao</author>
+				</authors>
+				<page>0100-0102</page>
+			</entry>
+			<entry>
+				<title>Annual Reports &#8212; Yellow Pages</title>
+				<feature />
+				<authors />
+				<page>0103-0118</page>
+			</entry>
+			<entry>
+				<title>Advertisements &#8212; Pink Pages</title>
+				<feature></feature>
+				<authors />
+				<page>0180-0187</page>
+			</entry>
+		</part>
+		<part pnum="006">
+			<entry>
+				<title>Editorial</title>
+				<feature />
+				<authors />
+				<page>0007-0008</page>
+			</entry>
+			<entry>
+				<title>Future Sources of Power and Energy</title>
+				<feature />
+				<authors>
+					<author>C. Sivaram</author>
+				</authors>
+				<page>0009-0011</page>
+			</entry>
+			<entry>
+				<title>Sri R. Natarajan - A Tribute</title>
+				<feature />
+				<authors>
+					<author>Prof. S. Sampath</author>
+				</authors>
+				<page>0012-0015</page>
+			</entry>
+			<entry>
+				<title>Nehru&#8212;The Champion of Peace</title>
+				<feature />
+				<authors>
+					<author>A. N. Narayanaswamy</author>
+				</authors>
+				<page>0016-0017</page>
+			</entry>
+			<entry>
+				<title>The City Bus Ride</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0018-0020</page>
+			</entry>
+			<entry>
+				<title>Walking in the Rain (Poem)</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0020-0020</page>
+			</entry>
+			<entry>
+				<title>The Other Hand</title>
+				<feature />
+				<authors>
+					<author>Ranjit Puri</author>
+				</authors>
+				<page>0021-0022</page>
+			</entry>
+			<entry>
+				<title>The Film Club (Poem)</title>
+				<feature />
+				<authors>
+					<author>M. Menon</author>
+				</authors>
+				<page>0023-0023</page>
+			</entry>
+			<entry>
+				<title>Sir Winston Analysed</title>
+				<feature />
+				<authors>
+					<author>T. S. Ananthu</author>
+				</authors>
+				<page>0024-0027</page>
+			</entry>
+			<entry>
+				<title>Stroll by the Sea (Poem)</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0027-0027</page>
+			</entry>
+			<entry>
+				<title>Women's Education in Germany</title>
+				<feature />
+				<authors>
+					<author>Hildegarde Rauve</author>
+				</authors>
+				<page>0028-0032</page>
+			</entry>
+			<entry>
+				<title>Marvel From Mangalore</title>
+				<feature />
+				<authors>
+					<author>R. Natarajan</author>
+				</authors>
+				<page>0035-0036</page>
+			</entry>
+			<entry>
+				<title>A Rendezvous with......</title>
+				<feature />
+				<authors>
+					<author>V. Ranganathan</author>
+				</authors>
+				<page>0037-0038</page>
+			</entry>
+			<entry>
+				<title>Indian Summer (Poem)</title>
+				<feature />
+				<authors>
+					<author>V. S. Kumar</author>
+				</authors>
+				<page>0038-0038</page>
+			</entry>
+			<entry>
+				<title>Cairo (or Abbas)</title>
+				<feature />
+				<authors>
+					<author>R. Shankar</author>
+				</authors>
+				<page>0039-0043</page>
+			</entry>
+			<entry>
+				<title>On Self Deceit</title>
+				<feature />
+				<authors>
+					<author>T. Gopichand</author>
+				</authors>
+				<page>0044-0046</page>
+			</entry>
+			<entry>
+				<title>No Swimming for me, Please!</title>
+				<feature />
+				<authors>
+					<author>S. Narayan</author>
+				</authors>
+				<page>0047-0048</page>
+			</entry>
+			<entry>
+				<title>A Shattered Hope (Poem)</title>
+				<feature />
+				<authors>
+					<author>M. Venkateswara Rao</author>
+				</authors>
+				<page>0049-0049</page>
+			</entry>
+			<entry>
+				<title>First Impressions</title>
+				<feature />
+				<authors>
+					<author>Fresher</author>
+				</authors>
+				<page>0050-0051</page>
+			</entry>
+			<entry>
+				<title>Beware of Dog</title>
+				<feature />
+				<authors>
+					<author>M. S. Chandramouli</author>
+				</authors>
+				<page>0052-0054</page>
+			</entry>
+			<entry>
+				<title>Avernus Diaboli</title>
+				<feature />
+				<authors>
+					<author>V. Anantharaman</author>
+				</authors>
+				<page>0055-0056</page>
+			</entry>
+			<entry>
+				<title>Humour in Fiction</title>
+				<feature />
+				<authors>
+					<author>M. Vikram Rao</author>
+				</authors>
+				<page>0057-0059</page>
+			</entry>
+			<entry>
+				<title>The Shepherd's Call (Poem)</title>
+				<feature />
+				<authors>
+					<author>P. Sudarsan</author>
+				</authors>
+				<page>0059-0059</page>
+			</entry>
+			<entry>
+				<title>Merry Go Round</title>
+				<feature />
+				<authors>
+					<author>K. Narayanan</author>
+				</authors>
+				<page>0060-0066</page>
+			</entry>
+			<entry>
+				<title>Who Knows It?</title>
+				<feature />
+				<authors>
+					<author>M. Hariharan</author>
+				</authors>
+				<page>0067-0068</page>
+			</entry>
+			<entry>
+				<title>Misleading Miscellany</title>
+				<feature />
+				<authors>
+					<author>P. S. Srinivasan</author>
+				</authors>
+				<page>0069-0070</page>
+			</entry>
+			<entry>
+				<title>A Vision of the Future</title>
+				<feature />
+				<authors>
+					<author>M. Menon</author>
+				</authors>
+				<page>0071-0072</page>
+			</entry>
+			<entry>
+				<title>Nature's Catechism on Life</title>
+				<feature />
+				<authors>
+					<author>G. Sampath</author>
+				</authors>
+				<page>0073-0074</page>
+			</entry>
+			<entry>
+				<title>Destination B. Tech. ...</title>
+				<feature />
+				<authors>
+					<author>Arvind Johari</author>
+				</authors>
+				<page>0075-0076</page>
+			</entry>
+			<entry>
+				<title>Annual Reports &#8212; Yellow Pages</title>
+				<feature />
+				<authors />
+				<page>0083-0130</page>
+			</entry>
+			<entry>
+				<title>Advertisement &#8212; Blue Pages</title>
+				<feature />
+				<authors />
+				<page>0131-0138</page>
+			</entry>
+		</part>
+		<part pnum="007">
+			<entry>
+				<title>Board of Governors</title>
+				<feature />
+				<authors />
+				<page>0007-0007</page>
+			</entry>
+			<entry>
+				<title>Editorial</title>
+				<feature />
+				<authors />
+				<page>0008-0009</page>
+			</entry>
+			<entry>
+				<title>Republic Day Address</title>
+				<feature />
+				<authors>
+					<author>Prof. B. Sengupto</author>
+				</authors>
+				<page>0013-0014</page>
+			</entry>
+			<entry>
+				<title>The Bootlegger</title>
+				<feature />
+				<authors>
+					<author>Alex Phillipos</author>
+				</authors>
+				<page>0015-0019</page>
+			</entry>
+			<entry>
+				<title>My Most Unforgettable Character</title>
+				<feature />
+				<authors>
+					<author>G. Sampath</author>
+				</authors>
+				<page>0020-0022</page>
+			</entry>
+			<entry>
+				<title>On Teaching Methods</title>
+				<feature />
+				<authors>
+					<author>T. Gopichand</author>
+				</authors>
+				<page>0023-0026</page>
+			</entry>
+			<entry>
+				<title>Choosing Engineer as a Career to-day</title>
+				<feature />
+				<authors>
+					<author>Bhagaban Das</author>
+				</authors>
+				<page>0027-0028</page>
+			</entry>
+			<entry>
+				<title>A Garland of Memories</title>
+				<feature />
+				<authors>
+					<author>R. Natarajan</author>
+				</authors>
+				<page>0031-0033</page>
+			</entry>
+			<entry>
+				<title>Nature Dwells Secretly</title>
+				<feature />
+				<authors>
+					<author>Muthukrishnan</author>
+				</authors>
+				<page>0034-0037</page>
+			</entry>
+			<entry>
+				<title>The Vanavani Primary School</title>
+				<feature />
+				<authors>
+					<author>Father Murphy, S. J.</author>
+				</authors>
+				<page>0038-0038</page>
+			</entry>
+			<entry>
+				<title>Kumbhakarna &#8212; A Kambachithram</title>
+				<feature />
+				<authors>
+					<author>M. G. Srinivasan</author>
+				</authors>
+				<page>0043-0051</page>
+			</entry>
+			<entry>
+				<title>Oh! Darling</title>
+				<feature />
+				<authors>
+					<author>K. Venkataramani</author>
+				</authors>
+				<page>0052-0054</page>
+			</entry>
+			<entry>
+				<title>Swami Vivekananda &#8212; A Great Son of India</title>
+				<feature />
+				<authors>
+					<author>P. Venkatesan</author>
+				</authors>
+				<page>0055-0057</page>
+			</entry>
+			<entry>
+				<title>Night</title>
+				<feature />
+				<authors>
+					<author>R. K. Prakash</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>When IIT is Petticoated</title>
+				<feature />
+				<authors>
+					<author>T. N. Vijay Reddy</author>
+				</authors>
+				<page>0058-0060</page>
+			</entry>
+			<entry>
+				<title>Random Reflections</title>
+				<feature />
+				<authors>
+					<author>V. J. R. Asirvatham</author>
+				</authors>
+				<page>0061-0064</page>
+			</entry>
+			<entry>
+				<title>My Girl Hildegund</title>
+				<feature />
+				<authors>
+					<author>A. Johari</author>
+				</authors>
+				<page>0064-0064</page>
+			</entry>
+			<entry>
+				<title>An Evening at the Shopping Centre</title>
+				<feature />
+				<authors>
+					<author>Saktikumar</author>
+				</authors>
+				<page>0067-0068</page>
+			</entry>
+			<entry>
+				<title>Matrimonial Prospects of a Graduate</title>
+				<feature />
+				<authors>
+					<author>M. Venkateswara Rao</author>
+				</authors>
+				<page>0069-0070</page>
+			</entry>
+			<entry>
+				<title>In Defence of the Punster</title>
+				<feature />
+				<authors>
+					<author>G. Govindarajan</author>
+				</authors>
+				<page>0071-0072</page>
+			</entry>
+			<entry>
+				<title>The Ways of IIT</title>
+				<feature />
+				<authors>
+					<author>O.M.N.</author>
+				</authors>
+				<page>0073-0074</page>
+			</entry>
+			<entry>
+				<title>The Royal Tiger from Pataudi</title>
+				<feature />
+				<authors>
+					<author>R. Natarajan</author>
+				</authors>
+				<page>0077-0079</page>
+			</entry>
+			<entry>
+				<title>Protection to an Accused under the Constitution</title>
+				<feature />
+				<authors>
+					<author>S. Srikant</author>
+				</authors>
+				<page>0080-0084</page>
+			</entry>
+			<entry>
+				<title>Chem Gems</title>
+				<feature />
+				<authors />
+				<page>0087-0000</page>
+			</entry>
+			<entry>
+				<title>On the Obligations of a group of finite beings</title>
+				<feature />
+				<authors>
+					<author>Peses</author>
+				</authors>
+				<page>0000-0000</page>
+			</entry>
+			<entry>
+				<title>Our Literary Week</title>
+				<feature />
+				<authors>
+					<author>R. K. Prakash</author>
+				</authors>
+				<page>0094-0094</page>
+			</entry>
+			<entry>
+				<title>The Advaita Philosophy in the Bhagvat Gita</title>
+				<feature />
+				<authors>
+					<author>V. Ranganathan</author>
+				</authors>
+				<page>0095-0096</page>
+			</entry>
+			<entry>
+				<title>The Cycle</title>
+				<feature />
+				<authors>
+					<author>Alex Phillipos</author>
+				</authors>
+				<page>0097-0101</page>
+			</entry>
+			<entry>
+				<title>Our N. C. C. Camp</title>
+				<feature />
+				<authors>
+					<author>S. Ramajayam</author>
+				</authors>
+				<page>0102-0104</page>
+			</entry>
+			<entry>
+				<title>Towards Comfort</title>
+				<feature />
+				<authors>
+					<author>P. S. K.</author>
+				</authors>
+				<page>0107-0107</page>
+			</entry>
+			<entry>
+				<title>Electronics in the Service of Man</title>
+				<feature />
+				<authors>
+					<author>Zakria Sait</author>
+				</authors>
+				<page>0108-0110</page>
+			</entry>
+			<entry>
+				<title>A Room to Let</title>
+				<feature />
+				<authors>
+					<author>Veer</author>
+				</authors>
+				<page>0111-0113</page>
+			</entry>
+			<entry>
+				<title>Music in Technology land</title>
+				<feature />
+				<authors>
+					<author>T. Varadarajan</author>
+				</authors>
+				<page>0114-0117</page>
+			</entry>
+			<entry>
+				<title>Why I like Solitude</title>
+				<feature />
+				<authors>
+					<author>Y. Visweswara Rao</author>
+				</authors>
+				<page>0118-0119</page>
+			</entry>
+			<entry>
+				<title>Buzz in Buses</title>
+				<feature />
+				<authors>
+					<author>B. C.</author>
+				</authors>
+				<page>0120-0121</page>
+			</entry>
+			<entry>
+				<title>The Great Detective</title>
+				<feature />
+				<authors>
+					<author>Mystic</author>
+				</authors>
+				<page>0122-0124</page>
+			</entry>
+			<entry>
+				<title>The Deserted Fane</title>
+				<feature />
+				<authors>
+					<author>P. Venkatesan</author>
+				</authors>
+				<page>0125-0128</page>
+			</entry>
+			<entry>
+				<title>Love</title>
+				<feature />
+				<authors>
+					<author>G. Sampath</author>
+				</authors>
+				<page>0129-0130</page>
+			</entry>
+			<entry>
+				<title>The Making of a Hero</title>
+				<feature />
+				<authors>
+					<author>Charanjit Singh</author>
+				</authors>
+				<page>0131-0133</page>
+			</entry>
+			<entry>
+				<title>Red Letter Days</title>
+				<feature />
+				<authors>
+					<author>Vijay G.</author>
+				</authors>
+				<page>0134-0136</page>
+			</entry>
+			<entry>
+				<title>The Institute Gymkhana Commitiee Reports</title>
+				<feature />
+				<authors />
+				<page>0139-0139</page>
+			</entry>
+		</part>
+	</volume>
+</iit>
