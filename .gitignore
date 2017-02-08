@@ -1,0 +1,12 @@
+public/Archives/Brochures/*.jpg
+public/Archives/Brochures/*/*.jpg
+public/Archives/Brochures/*/*/*.jpg
+public/Archives/Brochures/*/*/*/*.jpg
+public/Archives/Brochures/*.JPG
+public/Archives/Brochures/*/*.JPG
+public/Archives/Brochures/*/*/*.JPG
+public/Archives/Brochures/*/*/*/*.JPG
+public/Archives/Brochures/*.pdf
+public/Archives/Brochures/*/*.pdf
+public/Archives/Brochures/*/*/*.pdf
+public/Archives/Brochures/*/*/*/*.pdf
