@@ -4,7 +4,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title><?php if($pageTitle) echo $pageTitle . ' | '; ?>The Raza Foundation</title>
+    <title><?php if($pageTitle) echo $pageTitle . ' | '; ?>Natarang Pratishthan - Archive and Research Centre for Indian Theatre</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -64,7 +64,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-primary-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="<?=BASE_URL?>#home">Raza Foundation</a></li>
+                    <li class="active"><a href="<?=BASE_URL?>#home">Natarang Pratishthan</a></li>
                     <li><a>·</a></li>
 <!--                     <li><a href="<?=BASE_URL?>#about">About</a></li>
                     <li><a>·</a></li>
