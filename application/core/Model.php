@@ -100,7 +100,7 @@ class Model {
 		return $result;
 	}
 
-	public function getLetterDetails($albumID, $id) {
+	public function getArchiveDetails($albumID, $id) {
 
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;
@@ -118,10 +118,10 @@ class Model {
 
 	public function getNeighbourhood($id) {
 		$ids = preg_split('/__/', $id);
-		$archives = array("01"=>"Letters", "02"=>"Articles", "04"=>"Miscellaneous", "05"=>"Unsorted");
+		$archives = array("01"=>"Brochures");
         $atype = $archives[$ids[0]];
 		$albumID = $ids[1];
-		$albumPath = PHY_PUBLIC_URL . $atype . '/' . $albumID;
+		$albumPath = PHY_ARCHIVES_URL . $atype . '/' . $albumID;
 
 		$actualID = $ids[2];
 

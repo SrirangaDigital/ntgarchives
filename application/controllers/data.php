@@ -27,19 +27,18 @@ class data extends Controller {
 		$this->model->db->createTable(METADATA_TABLE_L4, $dbh, METADATA_TABLE_L4_SCHEMA);
 		
 		//List albums
-		$archives = array("01"=>"Letters", "02"=>"Articles", "04"=>"Miscellaneous", "05"=>"Unsorted");
-		//~ echo $archives['02'];
+		$archives = array("01"=>"Brochures");
+
 		foreach($archives as $key => $value)
 		{
-			$archivePath = PHY_PUBLIC_URL . $value . "/";
+			$archivesPath = PHY_ARCHIVES_URL . $value . "/";
 		
-			$albums = $this->model->listFiles($archivePath, 'json');
+			$albums = $this->model->listFiles($archivesPath, 'json');
 			if($albums) {
 
 				$this->model->insertAlbums($key, $albums, $dbh);
 
-				foreach ($albums as $album) {
-					
+				foreach ($albums as $album) {					
 
 					// List photos
 					$letters = $this->model->listFiles(str_replace('.json', '/', $album), 'json');
@@ -50,7 +49,7 @@ class data extends Controller {
 					}
 					else{
 
-						echo 'Album ' . $album . ' does not have any letters' . "\n";
+						echo 'Album ' . $album . ' does not have any data' . "\n";
 					}
 				}
 			}

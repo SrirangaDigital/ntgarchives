@@ -8,12 +8,12 @@ class listingModel extends Model {
 		parent::__construct();
 	}
 
-	public function listAlbums($defaultType) {
+	public function listAlbums($defaultArchive) {
 		
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;
 		
-		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L1 . ' WHERE albumID LIKE \''. $defaultType . '%\' ORDER BY albumID');
+		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L1 . ' WHERE albumID LIKE \''. $defaultArchive . '%\' ORDER BY albumID');
 		
 		$sth->execute();
 		$data = array();

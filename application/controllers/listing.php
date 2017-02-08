@@ -13,9 +13,9 @@ class listing extends Controller {
 		$this->albums();
 	}
 
-	public function albums($defaultType = DEFAULT_TYPE) {
+	public function albums($defaultArchive = DEFAULT_ARCHIVE) {
 
-		$data = $this->model->listAlbums($defaultType);
+		$data = $this->model->listAlbums($defaultArchive);
 		($data) ? $this->view('listing/albums', $data) : $this->view('error/index');
 	}
 
