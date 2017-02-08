@@ -2,7 +2,7 @@
 
 define('DEFAULT_ARCHIVE', '01');
 
-define('DEFAULT_ALBUM', '001');
+define('DEFAULT_ALBUM', '001.01');
 define('PHOTO_FILE_EXT', '.JPG');
 
 define('DEFAULT_TYPE', '01');
