@@ -90,69 +90,26 @@ class Database extends PDO {
 		return $db;
 	}
 	
-	public function updateData($table, $dbh, $data) {
-
-
-		$sth1 = $dbh->prepare('SELECT * FROM ' . $table . ' where id=:id');
-
-	    $sth1->bindParam(':id', $data['id']);
-		$sth1->execute();
+	public function updateAlbumDescription($albumID,$albumDescription,$dbh){
 		
-		$numRows = $sth1->rowCount();
-		
-		if($numRows)
-		{
-			//Updating Existing article;
-			$sth = $dbh->prepare('UPDATE ' . $table . ' SET 
-			journal=:journal, volume=:volume, issue=:issue, month=:month, year=:year, 
-			info=:info, hassup=:hassup, title=:title, feature=:feature, page=:page, 
-			abstract=:abstract, keywords=:keywords, authors=:authors, dates=:dates    
-			where id=:id');
+			$sth = $dbh->prepare('UPDATE ' . METADATA_TABLE_L1 . ' SET 
+			description=:description where albumID=:albumID');
 
-			$sth->bindParam(':journal', $data['journal']);
-			$sth->bindParam(':volume', $data['volume']);
-			$sth->bindParam(':issue', $data['issue']);
-			$sth->bindParam(':month', $data['month']);
-			$sth->bindParam(':year', $data['year']);
-			$sth->bindParam(':info', $data['info']);
-			$sth->bindParam(':hassup', $data['hassup']);
-			$sth->bindParam(':title', $data['title']);
-			$sth->bindParam(':feature', $data['feature']);
-			$sth->bindParam(':page', $data['page']);
-			$sth->bindParam(':abstract', $data['abstract']);
-			$sth->bindParam(':keywords', $data['keywords']);
-			$sth->bindParam(':authors', $data['authors']);
-			$sth->bindParam(':dates', $data['dates']);
-			$sth->bindParam(':id', $data['id']);
+			$sth->bindParam(':albumID', $albumID);
+			$sth->bindParam(':description', $albumDescription);
 
 			$sth->execute();
-		}		
-		else
-		{
-			//Inserting a New Article;
+	}
+	public function updateArchiveDescription($archiveID,$albumID,$combinedDescription,$dbh){
 
-			$sth = $dbh->prepare('INSERT INTO ' . $table . ' VALUES (
-			:journal,:volume,:issue,:month,:year,:info,:hassup,:title,:feature,:page,:abstract,:keywords,:authors,:dates,:id)');			
+			$sth = $dbh->prepare('UPDATE ' . METADATA_TABLE_L2 . ' SET 
+			description=:description where id=:id AND albumID=:albumID');
 
-			$sth->bindParam(':journal', $data['journal']);
-			$sth->bindParam(':volume', $data['volume']);
-			$sth->bindParam(':issue', $data['issue']);
-			$sth->bindParam(':month', $data['month']);
-			$sth->bindParam(':year', $data['year']);
-			$sth->bindParam(':info', $data['info']);
-			$sth->bindParam(':hassup', $data['hassup']);
-			$sth->bindParam(':title', $data['title']);
-			$sth->bindParam(':feature', $data['feature']);
-			$sth->bindParam(':page', $data['page']);
-			$sth->bindParam(':abstract', $data['abstract']);
-			$sth->bindParam(':keywords', $data['keywords']);
-			$sth->bindParam(':authors', $data['authors']);
-			$sth->bindParam(':dates', $data['dates']);
-			$sth->bindParam(':id', $data['id']);
-	
+			$sth->bindParam(':id', $archiveID);
+			$sth->bindParam(':albumID', $albumID);
+			$sth->bindParam(':description', $combinedDescription);
+
 			$sth->execute();
-		}
-			
 	}
 	
 }

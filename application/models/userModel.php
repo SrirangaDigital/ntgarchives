@@ -126,8 +126,8 @@ class userModel extends Model {
 	public function getRefererUrl() {
 
 		$refererURL = $_SERVER['HTTP_REFERER'];
-		$refererURL = preg_replace('/\/user.*/', '/home', $refererURL);
-		$refererURL = preg_replace('/\/error.*/', '/home', $refererURL);
+		$refererURL = preg_replace('/\/user.*/', '/#home', $refererURL);
+		$refererURL = preg_replace('/\/error.*/', '/#home', $refererURL);
 		return $refererURL;
 	}
 

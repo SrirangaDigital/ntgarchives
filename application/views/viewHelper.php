@@ -81,7 +81,8 @@ class viewHelper extends View {
         
         $imgPath = $this->getPath($id);
         $pages = glob($imgPath .  '/thumbs/*.JPG');
-        $randNum = rand(0, sizeof($pages) - 1);
+        //~ $randNum = rand(0, sizeof($pages) - 1);
+        $randNum = rand(0, 0);
         $pageSelected = $pages[$randNum];
 
         return str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $pageSelected);
@@ -170,12 +171,46 @@ class viewHelper extends View {
 
     public function insertReCaptcha() {
 
-        require_once('vendor/recaptchalib.php');
+		require_once('vendor/recaptchalib.php');
 
-        $publickey = "6Le_DBsTAAAAACt5YrgWhjW00CcAF0XYlA30oLPc";
-        $privatekey = "6Le_DBsTAAAAAH8rvyqjPXU9jxY5YJxXct76slWv";
+        $publickey = "6Ld9gRQUAAAAABN0ern9If3yH1cIXlKV19TXu5Wj";
+        $privatekey = "6Ld9gRQUAAAAAJ7NKpEvpqlVStQk45SoPUGK1DO9";
 
-        echo recaptcha_get_html($publickey);
+        echo '<div class="g-recaptcha" data-sitekey="'. $publickey . '"></div>';
+    }
+    public function displayDataInForm($json, $auxJson='') {
+
+        $data = json_decode($json, true);
+        
+        if ($auxJson) $data = array_merge($data, json_decode($auxJson, true));
+        
+        $count = 0;
+        $formgroup = 0;
+
+        foreach ($data as $key => $value) {
+             //~ echo "Key: $key; Value: $value\n";
+             if($key == 'albumID') {
+				if (preg_match('/__/', $value)) {
+				$id = preg_split('/__/', $value);
+				$value = $id[1];
+				}
+			 }
+            $disable = (($key == 'id') || ($key == 'albumID'))? 'readonly' : '';
+            echo '<div class="form-group" id="frmgroup' . $formgroup . '">' . "\n";
+            echo '<input type="text" class="form-control" name="id'. $count . '[]"  value="' . $key . '"' . $disable  . ' />&nbsp;' . "\n";
+            echo '<input type="text" class="form-control" name="id'. $count . '[]"  value="' . $value . '"' . $disable . ' />' . "\n";
+            if($disable != "readonly"){
+                echo '<input type="button"  onclick="removeUpdateDataElement(\'frmgroup'. $formgroup .'\')" value="Remove" />' . "\n";                
+            }
+            echo '</div>' . "\n";
+            $count++;
+            $formgroup++;
+        }
+
+        echo '<div id="keyvalues">' . "\n";
+        echo '</div>' . "\n";
+        echo '<input type="button" id="keyvaluebtn" onclick="addnewfields(keyvaluebtn)" value="Add New Fields" />' . "\n";
+        echo '<input type="submit" id="submit" value="Update Data" />' . "\n";
     }
 
 }

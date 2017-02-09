@@ -1,6 +1,3 @@
-<?php $albumDetails = $data['albumDetails']; unset($data['albumDetails']);?>
-
-
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -35,31 +32,23 @@
             </div>
     </div>
 </div>
-<div id="grid" class="container-fluid">
-    <div id="posts">
-        <div class="post no-border">
+<div class="container">
+    <div class="row gap-above-med">
+        <div class="col-md-5">
+            <?php $actualID = $data->albumID . '__' . $data->id; ?>
+            <div class="image-reduced-size">
+                <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnailFromArchive($actualID)?>">
+            </div>
+        </div>            
+        <div class="col-md-7">
             <div class="image-desc-full">
-                <?=$viewHelper->displayFieldData($albumDetails->description)?>
-                <?php if(isset($_SESSION['login'])) {?>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="<?=BASE_URL?>edit/archives/<?=$data[0]->albumID?>" class="btn btn-primary" role="button">Contribute</a>
-                    </li>    
-                </ul>    
-                <?php } ?>
+                <form  method="POST" class="form-horizontal" role="form" id="updateData" action="<?=BASE_URL?>data/updateArchiveJson/<?=$data->albumID?>" onsubmit="return validate()">
+                    <?=$viewHelper->displayDataInForm(json_encode($data))?>
+                </form>    
             </div>
         </div>
-<?php foreach ($data as $row) { ?>
-        <div class="post">
-            <?php $actualID = $viewHelper->getAlbumID($row->id); ?>
-            <a href="<?=BASE_URL?>describe/archive/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-                <img src="<?=$viewHelper->includeRandomThumbnailFromArchive($row->id)?>">
-                <?php
-                    $caption = $viewHelper->getDetailByField($row->description, 'Caption');
-                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
-                ?>
-            </a>
-        </div>
-<?php } ?>
     </div>
 </div>
+
+<script type="text/javascript" src="<?=PUBLIC_URL?>js/addnewfields.js"></script>
+<script type="text/javascript" src="<?=PUBLIC_URL?>js/validate.js"></script>

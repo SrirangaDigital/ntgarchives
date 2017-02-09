@@ -1,6 +1,3 @@
-<?php $albumDetails = $data['albumDetails']; unset($data['albumDetails']);?>
-
-
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -35,31 +32,24 @@
             </div>
     </div>
 </div>
-<div id="grid" class="container-fluid">
-    <div id="posts">
-        <div class="post no-border">
-            <div class="image-desc-full">
-                <?=$viewHelper->displayFieldData($albumDetails->description)?>
-                <?php if(isset($_SESSION['login'])) {?>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="<?=BASE_URL?>edit/archives/<?=$data[0]->albumID?>" class="btn btn-primary" role="button">Contribute</a>
-                    </li>    
-                </ul>    
-                <?php } ?>
-            </div>
+<div class="container">
+    <div class="row gap-above-med">
+        <div class="col-md-12">
+            <p class="feedback-title">Album data is updated.</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
-<?php foreach ($data as $row) { ?>
-        <div class="post">
-            <?php $actualID = $viewHelper->getAlbumID($row->id); ?>
-            <a href="<?=BASE_URL?>describe/archive/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-                <img src="<?=$viewHelper->includeRandomThumbnailFromArchive($row->id)?>">
-                <?php
-                    $caption = $viewHelper->getDetailByField($row->description, 'Caption');
-                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
-                ?>
-            </a>
-        </div>
-<?php } ?>
     </div>
 </div>

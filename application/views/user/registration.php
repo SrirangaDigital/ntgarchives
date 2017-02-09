@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="affiliation">Affiliation</label>
-                    <textarea class="form-control" name="affiliation" rows="4" placeholder="Please tell us about your affiliation and interest in KSCST Student Project Program."><?=$data['affiliation']?></textarea>
+                    <textarea class="form-control" name="affiliation" rows="4" placeholder="Please tell us about your affiliation."><?=$data['affiliation']?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="password">Password*</label>

@@ -1,6 +1,6 @@
 <?php
 
-define('HOST_IP', 'http://192.168.1.21/');
+define('HOST_IP', 'http://192.168.1.24/');
 define('BASE_URL', HOST_IP . 'ntgarchives/');
 define('PUBLIC_URL', BASE_URL . 'public/');
 define('XML_SRC_URL', BASE_URL . 'md-src/xml/');
@@ -13,7 +13,7 @@ define('STOCK_IMAGE_URL', PUBLIC_URL . 'images/stock/');
 define('RESOURCES_URL', PUBLIC_URL . 'Resources/');
 
 // Physical location of resources
-define('PHY_BASE_URL', '/var/www/html/ntgarchives/');
+define('PHY_BASE_URL', '/var/www/ntgarchives/');
 define('PHY_PUBLIC_URL', PHY_BASE_URL . 'public/');
 define('PHY_XML_SRC_URL', PHY_BASE_URL . 'md-src/xml/');
 define('PHY_ARCHIVES_URL', PHY_PUBLIC_URL . 'Archives/');
@@ -33,5 +33,12 @@ define('DB_NAME', 'archives');
 
 define('ntgARCHIVES_USER', 'root');
 define('ntgARCHIVES_PASSWORD', 'mysql');
+
+// Git config
+define('GIT_USER_NAME', 'shruthisdst');
+define('GIT_PASSWORD', 'shruthitr14');
+define('GIT_REPO', 'github.com/shivasdst/ntgarchives.git');
+define('GIT_REMOTE', 'https://' . GIT_USER_NAME . ':' . GIT_PASSWORD . '@' . GIT_REPO);
+define('GIT_EMAIL', 'shruthitr.nayak@gmail.com');
 
 ?>

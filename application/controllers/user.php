@@ -64,41 +64,47 @@ class user extends Controller {
 	public function processRegistration() {
 
 		$data = $this->model->getPostData();
-		$data = $this->model->validateRegistrationData($data);
+		if(!$data['g-recaptcha-response']){
+			$this->view('error/prompt', array('msg' => FB_CAPTCHA_MSG));
+		}
+		else
+		{
+			$data = $this->model->validateRegistrationData($data);
 
-		//We should throw appropritae error message while redirecting back to form
-		if ($data['isValid']) {
-			
-			$data = $this->model->completeRegistration($data);
-			//Send email only on sucessful registration
-			if ($data) {
+			//We should throw appropritae error message while redirecting back to form
+			if ($data['isValid']) {
+				
+				$data = $this->model->completeRegistration($data);
+				//Send email only on sucessful registration
+				if ($data) {
 
-				if (REQUIRE_EMAIL_VALIDATION) {
-	
-					$isSent = $this->model->sendLetterToPostman(SERVICE_NAME, SERVICE_EMAIL, $data['name'], $data['email'], REG_VERIFY_SUB, $this->model->bindVariablesToString(REG_VERIFY_MSG, $data), REG_VERIFY_SUCCESS_MSG, REG_VERIFY_ERROR_MSG);
-					//If mail is not sent, redirect to blah
-					if ($isSent) {
+					if (REQUIRE_EMAIL_VALIDATION) {
+		
+						$isSent = $this->model->sendLetterToPostman(SERVICE_NAME, SERVICE_EMAIL, $data['name'], $data['email'], REG_VERIFY_SUB, $this->model->bindVariablesToString(REG_VERIFY_MSG, $data), REG_VERIFY_SUCCESS_MSG, REG_VERIFY_ERROR_MSG);
+						//If mail is not sent, redirect to blah
+						if ($isSent) {
 
-						$this->view('page/prompt', array('msg' => REG_VERIFY_SUCCESS_MSG));
+							$this->view('page/prompt', array('msg' => REG_VERIFY_SUCCESS_MSG));
+						}
+						else{
+
+							$this->view('error/blah');
+						}
 					}
 					else{
 
-						$this->view('error/blah');
+						($this->model->autoVerifyRegistration($data)) ? $this->view('page/prompt', array('msg' => REG_NO_VALIDATION_SUCCESS_MSG)) : $this->view('error/prompt', array('msg' => REG_VERIFY_ERROR_MSG));
 					}
 				}
-				else{
+				else {
 
-					($this->model->autoVerifyRegistration($data)) ? $this->view('page/prompt', array('msg' => REG_NO_VALIDATION_SUCCESS_MSG)) : $this->view('error/prompt', array('msg' => REG_VERIFY_ERROR_MSG));
+					$this->view('error/prompt', array('msg' => REG_VERIFY_ERROR_MSG));
 				}
 			}
 			else {
 
-				$this->view('error/prompt', array('msg' => REG_VERIFY_ERROR_MSG));
+				$this->registration($data);
 			}
-		}
-		else {
-
-			$this->registration($data);
 		}
 	}
 

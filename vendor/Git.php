@@ -342,7 +342,7 @@ class GitRepo {
 	 * @return string
 	 */
 	public function status($html = false) {
-		$msg = $this->run("status -u");
+		$msg = $this->run("status --porcelain -u");
 		if ($html == true) {
 			$msg = str_replace("\n", "<br />", $msg);
 		}
