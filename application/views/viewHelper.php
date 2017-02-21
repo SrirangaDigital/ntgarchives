@@ -58,7 +58,7 @@ class viewHelper extends View {
     public function getPath($combinedID){
 		$archiveType = $this->getArchiveType($combinedID);
 		$ids = preg_split('/__/', $combinedID);
-		$ActualPath = PHY_ARCHIVES_URL . $archiveType . '/' . $ids[1] . '/' . $ids[2];
+		$ActualPath = PHY_ARCHIVES_JPG_URL . $archiveType . '/' . $ids[1] . '/' . $ids[2];
 		return $ActualPath;
     }
 
@@ -66,7 +66,7 @@ class viewHelper extends View {
 		
 		$archiveType = $this->getArchiveType($id);
 		$id = $this->getAlbumID($id);
-        $folders = glob(PHY_ARCHIVES_URL . $archiveType . '/' . $id . '/*',GLOB_ONLYDIR);
+        $folders = glob(PHY_ARCHIVES_JPG_URL . $archiveType . '/' . $id . '/*',GLOB_ONLYDIR);
         
         $randNum = rand(0, sizeof($folders) - 1);
         $folderSelected = $folders[$randNum];
@@ -74,7 +74,7 @@ class viewHelper extends View {
         $randNum = rand(0, sizeof($pages) - 1);
         $pageSelected = $pages[$randNum];
 
-        return str_replace(PHY_ARCHIVES_URL, ARCHIVES_URL, $pageSelected);
+        return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
 
     public function includeRandomThumbnailFromArchive($id = '') {
@@ -85,7 +85,7 @@ class viewHelper extends View {
         $randNum = rand(0, 0);
         $pageSelected = $pages[$randNum];
 
-        return str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $pageSelected);
+        return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
 
     public function displayFieldData($json, $auxJson='') {
