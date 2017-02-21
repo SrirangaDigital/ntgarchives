@@ -103,7 +103,8 @@ class viewHelper extends View {
 				$ArchivePath = BROCHURE_URL;
 			}
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
-            $phypdfFilePath = str_replace(ARCHIVES_JPG_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);
+            $phypdfFilePath = $pdfFilePath;
+            $phypdfFilePath = str_replace(ARCHIVES_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);
 
             $data['id'] = $data['albumID'] . '/' . $data['id'];
             unset($data['albumID']);
@@ -140,9 +141,7 @@ class viewHelper extends View {
         if(isset($phypdfFilePath) && file_exists($phypdfFilePath)){
             $html .= '<li><a href="'.$pdfFilePath.'" target="_blank">Click here to view PDF</a></li>'; 
         }
-
         $html .= '</ul>';
-
         return $html;
     }
 
