@@ -72,7 +72,7 @@ class viewHelper extends View {
         $folderSelected = $folders[$randNum];
         $pages = glob($folderSelected . '/thumbs/*.JPG');
         $randNum = rand(0, sizeof($pages) - 1);
-        $pageSelected = $pages[$randNum];
+        $pageSelected = $pages[0];
 
         return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
@@ -83,7 +83,7 @@ class viewHelper extends View {
         $pages = glob($imgPath .  '/thumbs/*.JPG');
         //~ $randNum = rand(0, sizeof($pages) - 1);
         $randNum = rand(0, 0);
-        $pageSelected = $pages[$randNum];
+        $pageSelected = $pages[0];
 
         return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
