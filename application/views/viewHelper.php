@@ -103,7 +103,8 @@ class viewHelper extends View {
 				$ArchivePath = BROCHURE_URL;
 			}
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
-            
+            $phypdfFilePath = str_replace(ARCHIVES_JPG_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);
+
             $data['id'] = $data['albumID'] . '/' . $data['id'];
             unset($data['albumID']);
         }
@@ -136,7 +137,7 @@ class viewHelper extends View {
 
         // $html .= '<li>Do you know details about this picture? Mail us at heritage@iitm.ac.in quoting the image ID. Thank you.</li>';
 
-        if($pdfFilePath != ''){
+        if(isset($phypdfFilePath) && file_exists($phypdfFilePath)){
             $html .= '<li><a href="'.$pdfFilePath.'" target="_blank">Click here to view PDF</a></li>'; 
         }
 
