@@ -105,6 +105,7 @@ class viewHelper extends View {
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
             $phypdfFilePath = $pdfFilePath;
             $phypdfFilePath = str_replace(ARCHIVES_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);
+            $pdfFilePath = str_replace(ARCHIVES_URL, ARCHIVES_JPG_URL, $pdfFilePath);
 
             $data['id'] = $data['albumID'] . '/' . $data['id'];
             unset($data['albumID']);
