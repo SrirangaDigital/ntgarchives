@@ -691,8 +691,8 @@ button.toggle-button{
   text-align:center;
   display:none;
 }
-span.img-small img{
-  max-width: 200px;
+img.img-small {
+  height: 250px;
   display: inline;
   margin: 0.4em;
 }

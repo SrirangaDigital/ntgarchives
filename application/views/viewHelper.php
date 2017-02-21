@@ -158,11 +158,11 @@ class viewHelper extends View {
 
             $mainFile = $file;
             $mainFile = preg_replace('/thumbs\//', '', $mainFile);
-            echo '<span class="img-small">';
+            // echo '<span class="">';
 
-            echo '<img class="img-responsive" data-original="'.str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $mainFile).'" src="' . str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $file) . '" >';
+            echo '<img class="img-small img-responsive" data-original="'.str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $mainFile).'" src="' . str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $file) . '" >';
 
-            echo '</span>';
+            // echo '</span>';
         }
         // echo $albumID . '->' . $letterID;
         echo '</div>';
