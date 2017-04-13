@@ -8,7 +8,7 @@ class dataModel extends Model {
 	}
 
 	public function listFiles($path, $type) {
-		//~ echo $path . "<br />";
+	
 		return glob($path . '*.' . $type);
 		
 	}

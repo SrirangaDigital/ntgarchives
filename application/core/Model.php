@@ -1,7 +1,8 @@
 <?php
 
 class Model {
-
+	
+	public $archives = array("01"=>"Brochures", "02" => "NewsPapers");
 	public function __construct() {
 
 		$this->db = new Database();
@@ -73,18 +74,6 @@ class Model {
 	    return $str;
  	}
 
- 	//~ public function listFiles ($path = '') {
-//~ 
- 		//~ if (!(is_dir($path))) return array();
-//~ 
- 		//~ $files = scandir($path);
- //~ 
- 		//~ unset($files[array_search('.', $files)]);
- 		//~ unset($files[array_search('..', $files)]);
- //~ 
- 		//~ return $files;
- 	//~ }
-
 	public function getAlbumDetails($albumID) {
 
 		$dbh = $this->db->connect(DB_NAME);
@@ -100,26 +89,10 @@ class Model {
 		return $result;
 	}
 
-	public function getArchiveDetails($albumID, $id) {
-
-		$dbh = $this->db->connect(DB_NAME);
-		if(is_null($dbh))return null;
-		
-		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L2 . ' WHERE albumID = :albumID AND id = :id');
-		$sth->bindParam(':albumID', $albumID);
-		$sth->bindParam(':id', $id);
-		$sth->execute();
-		
-		$result = $sth->fetch(PDO::FETCH_OBJ);
-		$dbh = null;
-
-		return $result;
-	}
-
 	public function getNeighbourhood($id) {
+		
 		$ids = preg_split('/__/', $id);
-		$archives = array("01"=>"Brochures");
-        $atype = $archives[$ids[0]];
+		$atype = $this->archives[$ids[0]];
 		$albumID = $ids[1];
 		$albumPath = PHY_ARCHIVES_URL . $atype . '/' . $albumID;
 
@@ -145,14 +118,8 @@ class Model {
 		}
 
 	}
-	public function getArchiveType($combinedID) {
-
-		$ids = preg_split('/__/', $combinedID);
-		$archives = array("01"=>"Brochures");
-		return $archives[$ids[0]];
-    }
-
-    public function getActualID($combinedID) {
+	
+	public function getActualID($combinedID) {
 
         return preg_replace('/^(.*)__/', '', $combinedID);
     }

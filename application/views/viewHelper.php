@@ -51,7 +51,7 @@ class viewHelper extends View {
     public function getArchiveType($combinedID) {
 
 		$ids = preg_split('/__/', $combinedID);
-		$archives = array("01"=>"Brochures");
+		$archives = $this->arrayOfArchives;
 		return $archives[$ids[0]];
     }
 
@@ -102,6 +102,10 @@ class viewHelper extends View {
             {
 				$ArchivePath = BROCHURE_URL;
 			}
+            elseif($data['Type'] == "News Paper")
+            {
+                $ArchivePath = NEWSPAPERS_URL;
+            }
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
             $phypdfFilePath = $pdfFilePath;
             $phypdfFilePath = str_replace(ARCHIVES_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);

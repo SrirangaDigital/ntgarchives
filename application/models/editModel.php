@@ -11,8 +11,7 @@ class editModel extends Model {
 	public function editAlbum($albumID, $photoID) {
 		
 		$ids = preg_split('/__/', $photoID);
-		$archives = array("01"=>"Brochures");
-		$file = PHY_ARCHIVES_URL . $archives[$ids[0]] . '/' . $ids[1] . '/' . $ids[2] . ".json";
+		$file = PHY_ARCHIVES_URL . $this->archives[$ids[0]] . '/' . $ids[1] . '/' . $ids[2] . ".json";
 		$photoDetails = file_get_contents($file);
 		$data = (object)json_decode($photoDetails, true);
 		$data->albumID = $albumID;

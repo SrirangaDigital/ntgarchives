@@ -112,6 +112,15 @@ class Database extends PDO {
 			$sth->execute();
 	}
 	
+	public function archiveDetailsFromDB($albumID, $id, $dbh){
+		
+		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L2 . ' WHERE albumID = :albumID AND id = :id');
+		$sth->bindParam(':albumID', $albumID);
+		$sth->bindParam(':id', $id);
+		$sth->execute();
+		return $sth->fetch(PDO::FETCH_OBJ);
+	}
+	
 }
 
 ?>

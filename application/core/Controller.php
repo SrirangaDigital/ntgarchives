@@ -2,6 +2,7 @@
 
 class Controller {
 
+	public $arrayOfArchives = array("01"=>"Brochures" , "02"=>"NewsPapers");
 	public function __construct() {
 
 		session_start();

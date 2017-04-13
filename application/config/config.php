@@ -8,6 +8,7 @@ define('ARCHIVES_URL', PUBLIC_URL . 'Archives/');
 define('ARCHIVES_JPG_URL', PUBLIC_URL . 'Archives_JPG/');
 define('PHOTO_URL', ARCHIVES_URL . 'Photos/');
 define('BROCHURE_URL', ARCHIVES_URL . 'Brochures/');
+define('NEWSPAPERS_URL', ARCHIVES_URL . 'NewsPapers/');
 define('DOWNLOAD_URL', PUBLIC_URL . 'Downloads/');
 define('FLAT_URL', BASE_URL . 'application/views/flat/');
 define('STOCK_IMAGE_URL', PUBLIC_URL . 'images/stock/');
@@ -21,7 +22,7 @@ define('PHY_ARCHIVES_URL', PHY_PUBLIC_URL . 'Archives/');
 define('PHY_ARCHIVES_JPG_URL', PHY_PUBLIC_URL . 'Archives_JPG/');
 define('PHY_PHOTO_URL', PHY_ARCHIVES_URL . 'Photos/');
 define('PHY_BROCHURE_URL', PHY_ARCHIVES_URL . 'Brohures/');
-define('PHY_TXT_URL', PHY_PUBLIC_URL . 'Text/');
+define('PHY_NEWSPAPERS_URL', PHY_ARCHIVES_URL . 'NewsPapers/');
 define('PHY_DOWNLOAD_URL', PHY_PUBLIC_URL . 'Downloads/');
 define('PHY_FLAT_URL', PHY_BASE_URL . 'application/views/flat/');
 define('PHY_STOCK_IMAGE_URL', PHY_PUBLIC_URL . 'images/stock/');
@@ -42,5 +43,4 @@ define('GIT_PASSWORD', 'shruthitr14');
 define('GIT_REPO', 'github.com/shivasdst/ntgarchives.git');
 define('GIT_REMOTE', 'https://' . GIT_USER_NAME . ':' . GIT_PASSWORD . '@' . GIT_REPO);
 define('GIT_EMAIL', 'shruthitr.nayak@gmail.com');
-
 ?>

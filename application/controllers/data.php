@@ -27,7 +27,8 @@ class data extends Controller {
 		$this->model->db->createTable(METADATA_TABLE_L4, $dbh, METADATA_TABLE_L4_SCHEMA);
 		
 		//List albums
-		$archives = array("01"=>"Brochures");
+		$archives = $this->arrayOfArchives;
+		
 
 		foreach($archives as $key => $value)
 		{
@@ -36,6 +37,7 @@ class data extends Controller {
 			$albums = $this->model->listFiles($archivesPath, 'json');
 			if($albums) {
 
+				// var_dump($albums);exit;
 				$this->model->insertAlbums($key, $albums, $dbh);
 
 				foreach ($albums as $album) {
