@@ -119,6 +119,10 @@ class Model {
 
 	}
 	
+	public function getArchiveType($combinedID) {
+
+        return preg_replace('/^(.*)__(.*)/', '$1', $combinedID);
+    }
 	public function getActualID($combinedID) {
 
         return preg_replace('/^(.*)__/', '', $combinedID);

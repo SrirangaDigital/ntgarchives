@@ -72,7 +72,9 @@ class data extends Controller {
 
 			$fileContents[$value[0]] = $value[1];
 		}
-		$archiveType = $this->model->getArchiveType($albumIdWithType);
+		$archiveID = $this->model->getArchiveType($albumIdWithType);
+
+		$archiveType = $this->arrayOfArchives[$archiveID];
 
 		$albumID = $fileContents['albumID'];
 
@@ -110,6 +112,7 @@ class data extends Controller {
 			$fileContents[$value[0]] = $value[1];
 		}
 		$archiveType = $this->model->getArchiveType($albumIdWithType);
+		$archiveType = $this->arrayOfArchives[$archiveType];
 
 		$albumID = $fileContents['albumID'];
 		$archiveID = $albumIdWithType . '__' . $fileContents['id'];
