@@ -1,10 +1,1 @@
-{
-    "id": "001",
-    "Type": "News Paper",
-    "Date": "11-09-2016",
-    "Media": "News Paper",
-    "Title": "Deccan Chronicle",
-    "Place": "Bangalore",
-    "Agency": "Media Clipping Bureau",
-    "Misc": ""
-}
+{"id":"001","Type":"News Paper","Date":"11-09-2016","Media":"News Paper","Title":"Deccan Chronicle","Place":"Bangalore","Agency":"Media Clipping Bureau","Misc":"Other details","albumID":"010"}
