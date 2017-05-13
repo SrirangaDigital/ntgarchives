@@ -4,8 +4,8 @@
             <div class="row"><!-- row -->
                 <div class="col-lg-12">
                     <p class="copy-text text-center">
-						© 2017 - All Rights Reserved - The Raza Foundation<br />
-                        No image available from this site may be used for commercial purposes without written permission from The Raza Foundation.
+						© 2017 - All Rights Reserved - The Natarang Pratishthan<br />
+                        No image available from this site may be used for commercial purposes without written permission from The Natarang Pratishthan.
 
                     </p>
                 </div>
