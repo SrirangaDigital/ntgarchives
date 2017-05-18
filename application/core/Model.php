@@ -158,6 +158,21 @@ class Model {
 
         return '';
     }
+    
+    public function getBrochureCount($selectedArchive, $albumID){
+		
+		$folderList = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$selectedArchive] . '/' . $albumID . "/*", GLOB_ONLYDIR);
+		return sizeof($folderList);
+		
+			
+	}
+    public function getFirstImageInAlbum($selectedArchive, $albumID){
+		
+		$folderList = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$selectedArchive] . '/' . $albumID . "/*", GLOB_ONLYDIR);
+		$files = glob($folderList[rand(0, sizeof($folderList)-1)] . '/thumbs/*.JPG');
+		$fileSelected = $files[0];
+		return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $fileSelected);   	
+    }
 }
 
 ?>

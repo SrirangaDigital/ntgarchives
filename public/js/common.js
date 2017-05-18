@@ -66,15 +66,15 @@ jQuery(window).load(function () {
     var gutter = parseInt(jQuery('.post').css('marginBottom'));
     var container = jQuery('#posts');
 
-
-
     // Creates an instance of Masonry on #posts
-
-    container.masonry({
-        gutter: gutter,
-        itemSelector: '.post',
-        columnWidth: '.post'
-    });
+	if(container.length > 0){
+		
+		container.masonry({
+			gutter: gutter,
+			itemSelector: '.post',
+			columnWidth: '.post'
+		});
+    }
     
     // This code fires every time a user resizes the screen and only affects .post elements
     // whose parent class isn't .container. Triggers resize first so nothing looks weird.
@@ -107,8 +107,10 @@ jQuery(window).load(function () {
           // this.viewer.zoomTo(1).rotateTo(180);
         }
       };
-
-    var viewer = new Viewer(document.getElementById('viewletterimages'),vieweroptions);
+    if(document.getElementById('viewletterimages')){
+		
+		var viewer = new Viewer(document.getElementById('viewletterimages'),vieweroptions);
+	}
 
 });
 
@@ -119,12 +121,14 @@ function buildMasonry(){
 
 
     // Creates an instance of Masonry on #posts
-
-    container.masonry({
-        gutter: gutter,
-        itemSelector: '.post',
-        columnWidth: '.post'
-    });
+	if(container.length > 0){
+		
+		container.masonry({
+			gutter: gutter,
+			itemSelector: '.post',
+			columnWidth: '.post'
+		});
+	}
 
     if (!jQuery('#posts').parent().hasClass('container')) {
     
