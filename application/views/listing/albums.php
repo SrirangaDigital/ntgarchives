@@ -38,14 +38,14 @@ $(document).ready(function(){
                      displayString = displayString + '</div>';
                     if(obj[i].Caption){
                         displayString = displayString + '<p class="image-desc">';
-                        displayString = displayString + '<strong>' + obj[i].title + '</strong>';    
+                        displayString = displayString + '<strong>' + obj[i].title + '</strong>';
                         displayString = displayString + "</p>";
-                    }    
-                    displayString = displayString + '</a>'; 
+                    }
+                    displayString = displayString + '</a>';
                     displayString = displayString + '</div>';
                 }
 
-                var $content = $(displayString); 
+                var $content = $(displayString);
                 $content.css('display','none');
                 $grid.append($content).imagesLoaded(
                     function(){
