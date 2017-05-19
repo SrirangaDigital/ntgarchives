@@ -75,7 +75,7 @@ class Model {
  	}
 
 	public function getAlbumDetails($albumID) {
-
+		
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;
 		
@@ -162,14 +162,26 @@ class Model {
     public function getBrochureCount($selectedArchive, $albumID){
 		
 		$folderList = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$selectedArchive] . '/' . $albumID . "/*", GLOB_ONLYDIR);
-		return sizeof($folderList);
-		
-			
+		return sizeof($folderList);	
 	}
+	
+    public function getArchivePageCount($ids){
+		
+		$pageCount = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$ids[0]] . '/' . $ids[1] . '/' . $ids[2] . '/thumbs/*.JPG');
+		return sizeof($pageCount);	
+	}
+	
     public function getFirstImageInAlbum($selectedArchive, $albumID){
 		
 		$folderList = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$selectedArchive] . '/' . $albumID . "/*", GLOB_ONLYDIR);
 		$files = glob($folderList[rand(0, sizeof($folderList)-1)] . '/thumbs/*.JPG');
+		$fileSelected = $files[0];
+		return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $fileSelected);   	
+    }
+    
+    public function getFirstImageInArchive($ids){
+		
+		$files = glob(PHY_ARCHIVES_JPG_URL . $this->archives[$ids[0]] . '/' . $ids[1] . '/' . $ids[2] . "/*.JPG");
 		$fileSelected = $files[0];
 		return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $fileSelected);   	
     }

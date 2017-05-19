@@ -49,26 +49,51 @@ class listingModel extends Model {
 		}
 
 		return $data;
-		return $data;
 	}
 
-	public function listArchives($albumID) {
+	public function listArchives($albumID, $pagedata) {
+		
+		$perPage = 10;
+		$page = $pagedata["page"];
+		$start = ($page-1) * $perPage;
+		
+		if($start < 0) $start = 0;
+		
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;
 		
-		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L2 . ' WHERE albumID = :albumID ORDER BY id');
+		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L2 . ' WHERE albumID = :albumID ORDER BY id limit ' . $start . ',' . $perPage);
 		$sth->bindParam(':albumID', $albumID);
 
 		$sth->execute();
 		$data = array();
 		
 		while($result = $sth->fetch(PDO::FETCH_OBJ)) {
-
+			
+			$result->albumID = $result->albumID;
+			$ids = explode("__", $result->id);
+			$result->image = $this->getFirstImageInArchive($ids);
+			$count = $this->getArchivePageCount($ids);
+			$result->pageCount = ($count == 1) ? $count . ' Page' : $count . ' Pages';
+			$result->title = $this->getDetailByField($result->description, 'Title');
+			$result->event = $this->getDetailByField($result->description, 'Event');
 			array_push($data, $result);
 		}
-
+			
 		$dbh = null;
+		
+		if(!empty($data)){
+			
+			$data["hidden"] = '<input type="hidden" class="pagenum" value="' . $page . '" />';
+		}
+		else{
+
+			$data["hidden"] = '<div class="lastpage"></div>';	
+		}
+		
 		$data['albumDetails'] = $this->getAlbumDetails($albumID);
+		
+		
 		return $data;
 	}
 }

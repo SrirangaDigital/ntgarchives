@@ -30,9 +30,19 @@ class listing extends Controller {
 	}
 
 	public function archives($album = DEFAULT_ALBUM) {
-
-		$data = $this->model->listArchives($album);
-		($data) ? $this->view('listing/archives', $data) : $this->view('error/index');
+		
+		$data = $this->model->getGetData();
+		unset($data['url']);
+		
+		if(!(isset($data["page"])))
+			$data["page"] = 1;
+	
+		$result = $this->model->listArchives($album, $data);
+		
+		if($data["page"] == 1)
+			($result) ? $this->view('listing/archives', $result) : $this->view('error/index');
+		else
+			echo json_encode($result, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES);
 	}
 }
 
