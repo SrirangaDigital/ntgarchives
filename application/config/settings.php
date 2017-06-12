@@ -8,6 +8,7 @@ define('PHOTO_FILE_EXT', '.JPG');
 define('DEFAULT_TYPE', '01');
 define('BROCHURES', '01');
 define('NEWSPAPERS', '02');
+define('PHOTOS', '03');
 
 // db table names
 define('METADATA_TABLE_L1', 'album');

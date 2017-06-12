@@ -1,6 +1,6 @@
 <?php
 
-define('HOST_IP', 'http://localhost/');
+define('HOST_IP', 'http://192.168.1.12/');
 define('BASE_URL', HOST_IP . 'ntgarchives/');
 define('PUBLIC_URL', BASE_URL . 'public/');
 define('XML_SRC_URL', BASE_URL . 'md-src/xml/');

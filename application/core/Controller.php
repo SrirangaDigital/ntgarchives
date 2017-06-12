@@ -1,8 +1,8 @@
 <?php
 
 class Controller {
-
-	public $arrayOfArchives = array("01"=>"Brochures" , "02"=>"NewsPapers");
+	
+	public $arrayOfArchives = array(BROCHURES => "Brochures", NEWSPAPERS => "NewsPapers", PHOTOS => "Photos");
 	public function __construct() {
 
 		session_start();

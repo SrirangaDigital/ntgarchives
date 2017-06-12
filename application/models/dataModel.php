@@ -17,9 +17,18 @@ class dataModel extends Model {
 
 		foreach ($albums as $album) {
 			
+			$photoAvailable = 1;
 			$albumID = preg_replace('/.*\/(.*)\.json/', "$1", $album);
+			
+			// This is to set flag based on photo availablity (ONLY FOR PHOTOS)
+			if($key == PHOTOS)
+			{
+				count(glob(PHY_ARCHIVES_JPG_URL . $this->archives[$key] . "/" . $albumID . "/thumbs/*.JPG")) > 0 ? $photoAvailable = 1 : $photoAvailable = 0;
+			}
+			
 			$data['albumID'] = $key . "__" . $albumID;
 			$data['description'] = $this->getJsonFromFile($album);
+			$data['imageAvailable'] = $photoAvailable;
 			
 			$this->db->insertData(METADATA_TABLE_L1, $dbh, $data);
 		}
@@ -36,6 +45,7 @@ class dataModel extends Model {
 			$albumDescription = $this->getAlbumDetails($data['albumID']);
 			$albumDescription = $albumDescription->description;
 			$letterDescription = $this->getJsonFromFile($letter);
+			
 			
 			$data['description'] = json_encode(array_merge(json_decode($letterDescription, true), json_decode($albumDescription, true)),JSON_UNESCAPED_UNICODE);
 

@@ -44,6 +44,11 @@ class listing extends Controller {
 		else
 			echo json_encode($result, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES);
 	}
+	
+	public function photoAlbums($archive) {
+		$result = $this->model->listPhotoAlbums($archive);
+		($result) ? $this->view('listing/photoAlbums', $result) : $this->view('error/index');
+	}
 }
 
 ?>

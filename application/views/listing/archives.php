@@ -2,7 +2,6 @@
 	$albumDetails = $data['albumDetails']; unset($data['albumDetails']);
 	$albumID = $data[0]->albumID;
 ?>
-
 <script>
 $(document).ready(function(){
 
@@ -17,8 +16,8 @@ $(document).ready(function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
+				$(".loader").hide();
                 processing = true;
-                // console.log(data);
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
                 var $grid = $('#posts').masonry({
                     gutter: gutter,
@@ -33,7 +32,6 @@ $(document).ready(function(){
                     displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/archive/' + obj[i].albumID + '/' + obj[i].id + '" title="View Details">';
                     displayString = displayString + '<img class="img-responsive" src="' +  obj[i].image + '">';
                     displayString = displayString + '<div class="OverlayText">' + obj[i].pageCount + '<br /><small>' + obj[i].event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
-                    displayString = displayString + '</div>';
                     displayString = displayString + '</a>';
                     displayString = displayString + '</div>';
                 }
@@ -56,7 +54,7 @@ $(document).ready(function(){
     }
     $(window).scroll(function(){
         if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.65){
-            if($(".lastpage").length == 0){
+			if($(".lastpage").length == 0){
                 var pagenum = parseInt($(".pagenum:last").val()) + 1;
                 if(!processing)
                 {
@@ -127,7 +125,7 @@ $(document).ready(function(){
         <div class="post">
             <?php $ids = explode("__", $row->id); ?>
             <a href="<?=BASE_URL?>describe/archive/<?=$ids[0]?>__<?=$ids[1]?>/<?= $row->id ?>" title="View Details">
-                <img  class="img-responsive" src="<?=$row->image?>">
+                <img  class="img-responsive" src="<?=$row->image?>" >
                 <div class="OverlayText"><?=$row->pageCount?><br /><small><?=$row->event?></small> <span class="link"><i class="fa fa-link"></i></span></div>
             </a>
         </div>
@@ -137,4 +135,4 @@ $(document).ready(function(){
 <div id="hidden-data">
     <?php echo $hiddenData; ?>
 </div>
-<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
+<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /></div>

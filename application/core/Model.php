@@ -2,7 +2,7 @@
 
 class Model {
 	
-	public $archives = array("01"=>"Brochures", "02" => "NewsPapers");
+	public $archives = array(BROCHURES => "Brochures", NEWSPAPERS => "NewsPapers", PHOTOS => "Photos");
 	public function __construct() {
 
 		$this->db = new Database();

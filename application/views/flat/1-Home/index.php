@@ -57,12 +57,6 @@
                 </li>
                 <li class="stat-elem">
                     <a href="#">
-                        <h2><i class="fa fa-image"></i></h2>
-                        <p>Photographs</p>
-                    </a>
-                </li>
-                <li class="stat-elem">
-                    <a href="#">
                         <h2><i class="fa fa-volume-up"></i></h2>
                         <p>Multimedia</p>
                     </a>

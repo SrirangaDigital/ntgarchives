@@ -5,6 +5,7 @@ define('DB_SCHEMA', 'CREATE DATABASE IF NOT EXISTS :db CHARACTER SET utf8mb4 COL
 define('METADATA_TABLE_L1_SCHEMA', 'CREATE TABLE `' . METADATA_TABLE_L1 . '` (
   `albumID` varchar(50) NOT NULL,
   `description` text DEFAULT NULL,
+  `imageAvailable` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`albumID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4');
 

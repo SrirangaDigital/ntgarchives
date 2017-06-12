@@ -6,7 +6,7 @@ class viewHelper extends View {
 
     }
 
-    public function getDetailByField($json = '', $firstField = '', $secondField = '') {
+    public function getDetailByField($json = '', $firstField = '', $secondField = '' , $thirdField = '' , $fourthField = '') {
 
         $data = json_decode($json, true);
 
@@ -17,6 +17,14 @@ class viewHelper extends View {
         elseif (isset($data[$secondField])) {
       
             return $data[$secondField];
+        }
+        elseif (isset($data[$thirdField])) {
+      
+            return $data[$thirdField];
+        }
+        elseif (isset($data[$fourthField])) {
+      
+            return $data[$fourthField];
         }
 
         return '';
@@ -37,12 +45,16 @@ class viewHelper extends View {
 			{
 				return ($count > 1) ? $count . ' Articles' : $count . ' Article';
 			}
+			elseif($archiveType == "Photos")
+			{
+				return ($count > 1) ? $count . ' Photos' : $count . ' Photo';
+			}
 			else
 			{
 				return ($count > 1) ? $count . ' Items' : $count . ' Item';
 			}
     }
-
+    
     public function getAlbumID($combinedID) {
 
         return preg_replace('/^(.*)__/', '', $combinedID);
@@ -216,6 +228,24 @@ class viewHelper extends View {
         echo '</div>' . "\n";
         echo '<input type="button" id="keyvaluebtn" onclick="addnewfields(keyvaluebtn)" value="Add New Fields" />' . "\n";
         echo '<input type="submit" id="submit" value="Update Data" />' . "\n";
+    }
+    
+    public function includeRandomThumbnailFromPhotoALbum($id = '') {
+		
+		$photos = "";
+		$archiveType = $this->getArchiveType($id);
+		$albumID = $this->getAlbumID($id);
+		$photos = glob(PHY_ARCHIVES_JPG_URL . $archiveType . '/' .  $albumID . '/thumbs/*.JPG');
+		
+		$randNum = rand(0, sizeof($photos) - 1);
+        if(count($photos) > 0 )
+        {
+			$photoSelected = $photos[$randNum];
+			return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $photoSelected);
+		}
+		
+		$photoSelected = PHY_PUBLIC_URL . "images/noimageavailable.jpg";
+		return str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $photoSelected);
     }
 
 }

@@ -2,6 +2,67 @@
 	$archive = $data['Archive'];
 	unset($data['Archive']);
 ?>
+<div class="container">
+    <div class="row first-row">
+        <!-- Column 1 -->
+            <div class="col-md-12 text-center">
+                <ul class="list-inline sub-nav">
+                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">CLIPPINGS</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="<?=BASE_URL?>listing/albums/<?=BROCHURES?>">Brochures</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="#">Photographs</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="#">Multimedia</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="#">Journals</a></li>
+                    <li><a>·</a></li>
+                    <li><a href="#">Miscellaneous</a></li>
+                    <li><a>·</a></li>
+                    <li><a>Search</a></li>
+                    <li id="searchForm">
+                        <form class="navbar-form" role="search" action="<?=BASE_URL?>search/field/" method="get">
+                            <div class="input-group add-on">
+                                <input type="text" class="form-control" placeholder="Keywords" name="description" id="description">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<?php 
+	$hiddenData = $data["hidden"]; 
+	unset($data["hidden"]);
+?>
+<div id="grid" class="container-fluid">
+    <div id="posts">
+<?php foreach ($data as $row) { ?>
+        <div class="post">
+            <a href="<?=BASE_URL?>listing/archives/<?=$row->albumID?>" title="View Album">
+                <div class="fixOverlayDiv">
+                    <img class="img-responsive" src="<?=$row->image?>">
+                    <div class="OverlayText"><?=$row->brochureCount?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                </div>
+                <p class="image-desc">
+                    <strong><?=$row->title?></strong>
+                </p>
+            </a>
+        </div>
+<?php } ?>
+    </div>
+</div>
+<div id="hidden-data">
+    <?php echo $hiddenData; ?>
+</div>
+<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
+
 
 <script>
 $(document).ready(function(){
@@ -19,7 +80,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 processing = true;
-                // console.log(data);
+                console.log(data);
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
                 var $grid = $('#posts').masonry({
                     gutter: gutter,
@@ -77,64 +138,3 @@ $(document).ready(function(){
     });
 });     
 </script>
-
-<div class="container">
-    <div class="row first-row">
-        <!-- Column 1 -->
-            <div class="col-md-12 text-center">
-                <ul class="list-inline sub-nav">
-                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">NEWS PAPER CLIPPINGS</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="<?=BASE_URL?>listing/albums/<?=BROCHURES?>">Brochures</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="#">Photographs</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="#">Multimedia</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="#">Journals</a></li>
-                    <li><a>·</a></li>
-                    <li><a href="#">Miscellaneous</a></li>
-                    <li><a>·</a></li>
-                    <li><a>Search</a></li>
-                    <li id="searchForm">
-                        <form class="navbar-form" role="search" action="<?=BASE_URL?>search/field/" method="get">
-                            <div class="input-group add-on">
-                                <input type="text" class="form-control" placeholder="Keywords" name="description" id="description">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-    </div>
-</div>
-
-<?php 
-	$hiddenData = $data["hidden"]; 
-	unset($data["hidden"]);
-?>
-<div id="grid" class="container-fluid">
-    <div id="posts">
-<?php foreach ($data as $row) { ?>
-        <div class="post">
-            <a href="<?=BASE_URL?>listing/archives/<?=$row->albumID?>" title="View Album">
-                <div class="fixOverlayDiv">
-                    <img class="img-responsive" src="<?=$row->image?>">
-                    <div class="OverlayText"><?=$row->brochureCount?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
-                </div>
-                <p class="image-desc">
-                    <strong><?=$row->title?></strong>
-                </p>
-            </a>
-        </div>
-<?php } ?>
-    </div>
-</div>
-<div id="hidden-data">
-    <?php echo $hiddenData; ?>
-</div>
-<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>

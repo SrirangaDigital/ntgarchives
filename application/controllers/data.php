@@ -31,7 +31,7 @@ class data extends Controller {
 		
 
 		foreach($archives as $key => $value)
-		{
+		{	
 			$archivesPath = PHY_ARCHIVES_URL . $value . "/";
 		
 			$albums = $this->model->listFiles($archivesPath, 'json');
