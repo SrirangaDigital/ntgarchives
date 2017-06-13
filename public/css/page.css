@@ -229,6 +229,14 @@ a.moretag {
 .post a{
     color: inherit;
 }
+
+.post .noimage{
+	margin-bottom: 30px;
+	width: 100%;
+    color: #eee;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 19.75em;
+}
 .post img {
     width: 100%;
 }
