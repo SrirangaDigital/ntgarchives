@@ -6,16 +6,20 @@
                     <li><a href="#">Clippings</a></li>
                     <li><a>·</a></li>
                     <li><a href="<?=BASE_URL?>listing/albums/<?=BROCHURES?>">Brochures</a></li>
+<!--
                     <li><a>·</a></li>
                     <li><a href="#">Books</a></li>
+-->
                     <li><a>·</a></li>
-                    <li><a href="#">Photographs</a></li>
+                    <li><a href="<?=BASE_URL?>listing/photoAlbums/<?=PHOTOS?>">Photographs</a></li>
+<!--
                     <li><a>·</a></li>
                     <li><a href="#">Multimedia</a></li>
                     <li><a>·</a></li>
                     <li><a href="#">Journals</a></li>
                     <li><a>·</a></li>
                     <li><a href="#">Miscellaneous</a></li>
+-->
                     <li><a>·</a></li>
                     <li><a>Search</a></li>
                     <li id="searchForm">
