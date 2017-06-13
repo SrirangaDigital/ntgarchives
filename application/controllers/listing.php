@@ -46,8 +46,25 @@ class listing extends Controller {
 	}
 	
 	public function photoAlbums($archive) {
-		$result = $this->model->listPhotoAlbums($archive);
-		($result) ? $this->view('listing/photoAlbums', $result) : $this->view('error/index');
+		
+		$data = $this->model->getGetData();
+		
+		unset($data['url']);
+		
+		if(!(isset($data["page"]))){
+		
+			$data["page"] = 1;
+		
+		}
+	
+		$result = $this->model->listPhotoAlbums($archive, $data);
+			
+		if($data["page"] == 1){
+			($result) ? $this->view('listing/photoAlbums', $result) : $this->view('error/index');
+		}
+		else{
+			echo json_encode($result);
+		}
 	}
 	
 	public function photos($album) {
