@@ -92,6 +92,7 @@ class Model {
 	public function getNeighbourhood($id) {
 		
 		$ids = preg_split('/__/', $id);
+		var_dump($ids); exit;
 		$atype = $this->archives[$ids[0]];
 		$albumID = $ids[1];
 		$albumPath = PHY_ARCHIVES_URL . $atype . '/' . $albumID;
@@ -117,6 +118,34 @@ class Model {
 			return False;
 		}
 
+	}
+
+	public function getPhotosNeighbourhood($albumID, $id) {
+
+		$archive = $this->archives[$this->getArchiveType($albumID)];
+
+		$albumID = preg_replace("/.*__(.*)/", "$1", $albumID);
+
+		$albumPath = PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID;
+
+		$actualID = $this->getActualID($id);
+
+		$photoPath = $albumPath . "/" . $actualID . '.JPG';
+
+		$files = glob($albumPath . "/*.JPG");
+
+		$match = array_search($photoPath, $files);
+
+		if(!($match === False)){
+			
+			$data['prev'] = (isset($files[$match-1])) ? preg_replace("/.*\/(.*)\.JPG/", "$1", $files[$match-1]) : '';
+			$data['next'] = (isset($files[$match+1])) ? preg_replace("/.*\/(.*)\.JPG/", "$1", $files[$match+1]) : '';
+			return $data;
+		}	
+		else{
+
+			return False;
+		}
 	}
 	
 	public function getArchiveType($combinedID) {
@@ -185,6 +214,22 @@ class Model {
 		$fileSelected = $files[0];
 		return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $fileSelected);   	
     }
+
+    public function getPhotoDetails($albumID, $id) {
+
+		$dbh = $this->db->connect(DB_NAME);
+		if(is_null($dbh))return null;
+		
+		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L2 . ' WHERE albumID = :albumID AND id = :id');
+		$sth->bindParam(':albumID', $albumID);
+		$sth->bindParam(':id', $id);
+		$sth->execute();
+		
+		$result = $sth->fetch(PDO::FETCH_OBJ);
+		$dbh = null;
+
+		return $result;
+	}
 }
 
 ?>

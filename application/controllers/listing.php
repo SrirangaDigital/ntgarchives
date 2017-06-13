@@ -49,6 +49,12 @@ class listing extends Controller {
 		$result = $this->model->listPhotoAlbums($archive);
 		($result) ? $this->view('listing/photoAlbums', $result) : $this->view('error/index');
 	}
+	
+	public function photos($album) {
+		
+		$result = $this->model->listPhotos($album);
+		($result) ? $this->view('listing/photos', $result) : $this->view('error/index');
+	}
 }
 
 ?>

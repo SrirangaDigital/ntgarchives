@@ -49,12 +49,19 @@
                         <p>Brochures</p>
                     </a>
                 </li>
+                 <li class="stat-elem">
+                    <a href="<?=BASE_URL?>listing/photoAlbums/<?=PHOTOS?>">
+                        <h2><i class="fa fa-image"></i></h2>
+                        <p>Photographs</p>
+                    </a>
+                </li>
                 <li class="stat-elem">
                     <a href="#">
                         <h2><i class="fa fa-book"></i></h2>
                         <p>Books</p>
                     </a>
                 </li>
+                
                 <li class="stat-elem">
                     <a href="#">
                         <h2><i class="fa fa-volume-up"></i></h2>

@@ -32,26 +32,37 @@
             </div>
     </div>
 </div>
-<div id="grid" class="container-fluid">
-    <div id="posts">
-<?php foreach ($data as $row) { ?>
-        <div class="post">
-            <a href="<?=BASE_URL?>listing/photos/<?=$row->albumID?>" title="View Album">
-                <div class="fixOverlayDiv">
-					<?php if($row->imageAvailable == 1):?>
-                    <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnailFromPhotoALbum($row->albumID)?>">
-                    <?php else : ?>
-                    <i class="fa fa-image fa-5x noimage"></i>
-                    <?php endif; ?>
-                    <div class="OverlayText">
-						<?=$viewHelper->getLettersCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span>
-					</div>
-                </div>
-                <p class="image-desc">
-                    <strong><?=$viewHelper->getDetailByField($row->description, 'drama' , 'dance' , 'film' , 'subject' , 'card-type')?></strong>
-                </p>
-            </a>
+<div class="container">
+    <div class="row gap-above-med">
+        <div class="col-md-9">
+            <ul class="pager">
+                <?php if($data->neighbours['prev']) {?> 
+                <li class="previous"><a href="<?=BASE_URL?>describe/photo/<?=$data->albumID?>/<?=$data->albumID . '__' . $data->neighbours['prev']?>">&lt; Previous</a></li>
+                <?php } ?>
+                <?php if($data->neighbours['next']) {?> 
+                <li class="next"><a href="<?=BASE_URL?>describe/photo/<?=$data->albumID?>/<?=$data->albumID . '__' . $data->neighbours['next']?>">Next &gt;</a></li>
+                <?php } ?>
+            </ul>
+            <?php
+                $actualID = $viewHelper->getActualID($data->id);
+                $archive = $viewHelper->getArchiveType($data->albumID);
+            ?>
+            <div class="image-full-size">
+            <?php $albumID = $viewHelper->getAlbumID($data->albumID)?>
+                <img class="img-responsive" src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>">
+            </div>
+        </div>            
+        <div class="col-md-3">
+            <div class="image-desc-full">
+                <ul class="list-unstyled">
+                    <?=$viewHelper->displayFieldData($data->description)?>
+                   <?php if(isset($_SESSION['login'])) {?>
+                    <li>
+                            <a href="<?=BASE_URL?>edit/photo/<?=$data->albumID?>/<?=$viewHelper->getActualID($data->id)?>" class="btn btn-primary" role="button">Contribute</a>
+                    </li>                
+                    <?php } ?>
+                </ul>
+            </div>
         </div>
-<?php } ?>
     </div>
 </div>

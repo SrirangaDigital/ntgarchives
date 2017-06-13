@@ -1,3 +1,9 @@
+<?php
+	$albumDetails = $data['albumDetails'];
+	unset($data['albumDetails']);
+	
+?>
+
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -34,22 +40,35 @@
 </div>
 <div id="grid" class="container-fluid">
     <div id="posts">
+        <div class="post no-border">
+            <div class="image-desc-full">
+                <?=$viewHelper->displayFieldData($albumDetails->description)?>
+                <?php if(isset($_SESSION['login'])) {?>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="<?=BASE_URL?>edit/album/<?=$data[0]->albumID?>" class="btn btn-primary" role="button">Contribute</a>
+                    </li>    
+                </ul>    
+                <?php } ?>
+            </div>
+        </div>
 <?php foreach ($data as $row) { ?>
         <div class="post">
-            <a href="<?=BASE_URL?>listing/photos/<?=$row->albumID?>" title="View Album">
-                <div class="fixOverlayDiv">
-					<?php if($row->imageAvailable == 1):?>
-                    <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnailFromPhotoALbum($row->albumID)?>">
-                    <?php else : ?>
-                    <i class="fa fa-image fa-5x noimage"></i>
-                    <?php endif; ?>
-                    <div class="OverlayText">
-						<?=$viewHelper->getLettersCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span>
-					</div>
-                </div>
-                <p class="image-desc">
-                    <strong><?=$viewHelper->getDetailByField($row->description, 'drama' , 'dance' , 'film' , 'subject' , 'card-type')?></strong>
-                </p>
+            <?php
+				$photoID = $viewHelper->getPhotoID($row->id); 
+				$albumID = $viewHelper->getAlbumID($row->albumID);
+                $archive = $viewHelper->getArchiveType($row->albumID);
+			?>
+            <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
+				<?php if(file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG')): ?>
+                <img src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
+                <?php else: ?>
+                <i class="fa fa-image fa-5x noimage"></i>
+                <?php endif;?>
+                <?php
+                    $caption = $viewHelper->getDetailByField($row->description, 'desc');
+                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
+                ?>
             </a>
         </div>
 <?php } ?>

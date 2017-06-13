@@ -6,7 +6,7 @@ class viewHelper extends View {
 
     }
 
-    public function getDetailByField($json = '', $firstField = '', $secondField = '' , $thirdField = '' , $fourthField = '') {
+    public function getDetailByField($json = '', $firstField = '', $secondField = '' , $thirdField = '' , $fourthField = '', $fifthField = '') {
 
         $data = json_decode($json, true);
 
@@ -25,6 +25,10 @@ class viewHelper extends View {
         elseif (isset($data[$fourthField])) {
       
             return $data[$fourthField];
+        }
+        elseif (isset($data[$fifthField])) {
+      
+            return $data[$fifthField];
         }
 
         return '';
@@ -58,6 +62,11 @@ class viewHelper extends View {
     public function getAlbumID($combinedID) {
 
         return preg_replace('/^(.*)__/', '', $combinedID);
+    }
+    
+    public function getPhotoID($combinedID) {
+
+        return preg_replace('/(.*)__(.*)__/', '', $combinedID);
     }
 
     public function getArchiveType($combinedID) {
@@ -110,6 +119,7 @@ class viewHelper extends View {
         if(isset($data['id'])) {
 			
             $actualID = $this->getAlbumID($data['id']);
+
             if($data['Type'] == "Brochure")
             {
 				$ArchivePath = BROCHURE_URL;
@@ -117,6 +127,10 @@ class viewHelper extends View {
             elseif($data['Type'] == "News Paper")
             {
                 $ArchivePath = NEWSPAPERS_URL;
+            }
+            elseif($data['Type'] == "Photos")
+            {
+                $ArchivePath = PHOTO_URL;
             }
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
             $phypdfFilePath = $pdfFilePath;
@@ -246,6 +260,11 @@ class viewHelper extends View {
 		
 		$photoSelected = PHY_PUBLIC_URL . "images/noimageavailable.jpg";
 		return str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $photoSelected);
+    }
+
+    public function getActualID($combinedID) {
+
+        return preg_replace('/^(.*)__/', '', $combinedID);
     }
 
 }

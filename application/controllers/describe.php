@@ -19,6 +19,13 @@ class describe extends Controller {
 		
 		($data) ? $this->view('describe/archive', $data) : $this->view('error/index');
 	}
+
+	public function photo($albumID = DEFAULT_ALBUM , $id = '') {
+
+		$data = $this->model->getPhotoDetails($albumID, $id);
+		$data->neighbours = $this->model->getPhotosNeighbourhood($albumID, $id);
+		($data) ? $this->view('describe/photo', $data) : $this->view('error/index');
+	}
 }
 
 ?>
