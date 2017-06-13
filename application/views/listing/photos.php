@@ -59,17 +59,23 @@
 				$albumID = $viewHelper->getAlbumID($row->albumID);
                 $archive = $viewHelper->getArchiveType($row->albumID);
 			?>
-            <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-				<?php if(file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG')): ?>
-                <img src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
-                <?php else: ?>
-                <i class="fa fa-image fa-5x noimage"></i>
-                <?php endif;?>
+            <?php if(file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG')): ?>
+                <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
+    			    <img src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
+                </a>
                 <?php
                     $caption = $viewHelper->getDetailByField($row->description, 'desc');
                     if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
                 ?>
-            </a>
+            <?php else: ?>
+                <i class="fa fa-image fa-5x noimage"></i>
+                <?php
+                    $caption = $viewHelper->getDetailByField($row->description, 'desc', 'misc');
+                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
+                ?>
+            <?php endif;?>
+                
+            
         </div>
 <?php } ?>
     </div>

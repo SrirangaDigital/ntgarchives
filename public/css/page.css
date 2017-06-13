@@ -231,8 +231,8 @@ a.moretag {
 }
 
 .post .noimage{
-	margin-bottom: 30px;
-	width: 100%;
+  
+	  width: 100%;
     color: #eee;
     text-shadow: 1px 1px 1px #ccc;
     font-size: 19.75em;
