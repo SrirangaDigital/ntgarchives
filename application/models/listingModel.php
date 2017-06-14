@@ -30,7 +30,7 @@ class listingModel extends Model {
 			$ids = explode("__", $result->albumID);
 			$result->image = $this->getFirstImageInAlbum($defaultArchive, $ids[1]);
 			$count = $this->getBrochureCount($defaultArchive, $ids[1]);
-			$result->brochureCount = ($count == 1) ? $count . ' Brochure' : $count . ' Brochures';
+			$result->brochureCount = ($count == 1) ? $count . ' ' . substr_replace($this->archives[$ids[0]], "", -1) : $count . ' ' . $this->archives[$ids[0]];
 			$result->title = $this->getDetailByField($result->description, 'Title');
 			$result->event = $this->getDetailByField($result->description, 'Event');
 			array_push($data, $result);
