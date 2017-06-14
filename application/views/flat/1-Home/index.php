@@ -55,6 +55,7 @@
                         <p>Photographs</p>
                     </a>
                 </li>
+<!--
                 <li class="stat-elem">
                     <a href="#">
                         <h2><i class="fa fa-book"></i></h2>
@@ -80,6 +81,7 @@
                         <p>Miscellaneous</p>
                     </a>
                 </li>
+-->
             </ul>
         </div>
     </div>
