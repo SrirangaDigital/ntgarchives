@@ -51,9 +51,9 @@
                 $actualID = $viewHelper->getActualID($data->id);
                 $archive = $viewHelper->getArchiveType($data->albumID);
             ?>
-            <div class="image-full-size">
+            <div class="image-full-size" id="viewletterimages">
             <?php $albumID = $viewHelper->getAlbumID($data->albumID)?>
-                <img class="img-responsive" src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>">
+                <img class="img-responsive" src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>" data-original="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>">;
             </div>
         </div>            
         <div class="col-md-3">
@@ -70,3 +70,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?=PUBLIC_URL?>js/viewer.js"></script>
