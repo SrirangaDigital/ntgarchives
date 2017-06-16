@@ -31,6 +31,7 @@ class listingModel extends Model {
 			$result->image = $this->getFirstImageInAlbum($defaultArchive, $ids[1]);
 			$count = $this->getBrochureCount($defaultArchive, $ids[1]);
 			$result->brochureCount = ($count == 1) ? $count . ' ' . substr_replace($this->archives[$ids[0]], "", -1) : $count . ' ' . $this->archives[$ids[0]];
+			if($ids[0] == NEWSPAPERS) $result->brochureCount = $result->brochureCount . " Clippings";
 			$result->title = $this->getDetailByField($result->description, 'Title');
 			$result->event = $this->getDetailByField($result->description, 'Event');
 			array_push($data, $result);
