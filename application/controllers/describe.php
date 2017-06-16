@@ -15,6 +15,8 @@ class describe extends Controller {
 	public function archive($albumID = DEFAULT_ALBUM, $id = '') {
 
 		$data = $this->model->getArchiveDetails($albumID, $id);
+		$result = $this->model->getAlbumDetails($albumID);
+		$data->albumDescription = $result->description;
 		$data->neighbours = $this->model->getNeighbourhood($id);
 		
 		($data) ? $this->view('describe/archive', $data) : $this->view('error/index');

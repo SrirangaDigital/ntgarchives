@@ -49,13 +49,20 @@
                 <li class="next"><a href="<?=BASE_URL?>describe/archive/<?=$data->albumID?>/<?=$data->albumID . '__' . $data->neighbours['next']?>">Next &gt;</a></li>
                 <?php } ?>
             </ul>
-            <?php $actualID = $viewHelper->getAlbumID($data->id); ?>
+            <?php 
+				$albumID = $viewHelper->getAlbumID($data->albumID); 
+				$archiveType = substr_replace($viewHelper->getArchiveType($data->id), "", -1);
+			?>
             <?php $viewHelper->displayThumbs($data->id); ?>
         </div>            
         <div class="col-md-3">
             <div class="image-desc-full">
                 <ul class="list-unstyled">
-                    <?=$viewHelper->displayFieldData($data->description)?>
+					<span class="subheader">Album Details</span><br/><br/><br/>
+					<?=$viewHelper->displayFieldData($data->albumDescription)?>
+					<br/><br/>
+					<span class="subheader">Item Details</span><br/><br/><br/>
+					<?=$viewHelper->displayFieldData($data->description, $albumID)?>
                     <?php if(isset($_SESSION['login'])) {?>
                     <li>
                             <a href="<?=BASE_URL?>edit/archive/<?=$data->albumID?>/<?=$data->id?>" class="btn btn-primary" role="button">Contribute</a>

@@ -109,13 +109,15 @@ class viewHelper extends View {
         return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
 
-    public function displayFieldData($json, $auxJson='') {
+    public function displayFieldData($json, $albumID='') {
 
         $data = json_decode($json, true);
         
-        if ($auxJson) $data = array_merge($data, json_decode($auxJson, true));
-
-        $pdfFilePath = '';
+        //~ Pushing albumID into archive description's array
+        if(!isset($data['albumID']))
+        $data['albumID'] = $albumID;
+        
+		$pdfFilePath = '';
         if(isset($data['id'])) {
 			
             $actualID = $this->getAlbumID($data['id']);
@@ -132,6 +134,7 @@ class viewHelper extends View {
             {
                 $ArchivePath = PHOTO_URL;
             }
+            
 			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
             $phypdfFilePath = $pdfFilePath;
             $phypdfFilePath = str_replace(ARCHIVES_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);

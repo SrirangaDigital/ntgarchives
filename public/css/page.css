@@ -290,6 +290,10 @@ a.moretag {
     /*max-width: 850px;*/
     margin: 0 auto;
 }
+.subheader{
+	color: #BA9D69;
+	font-weight: bold;
+}
 .image-desc-full li{
     
     font-size: 14px;
@@ -306,7 +310,7 @@ a.moretag {
     color: #5d5d5d;
 }
 .image-desc-full li a{
-    color: #e5ae47;
+    color: #395B98;
 }
 .image-desc-full li a:hover{
     border-bottom: 1px dotted #e5ae47;
