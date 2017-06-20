@@ -119,7 +119,7 @@ class viewHelper extends View {
         $searchTerm = "";
         if(isset($data['searchTerm']) && $data['searchTerm'] != "")
         {
-			$searchTerm = $data['searchTerm'];
+			$searchTerm = str_replace(" ", "|", $data['searchTerm']);
 			unset($data['searchTerm']);
 		}
         
