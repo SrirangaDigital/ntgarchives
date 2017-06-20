@@ -1,4 +1,8 @@
-
+<?php
+if(isset($data->searchTerm) && $data->searchTerm != "")
+$searchTerm = $data->searchTerm;
+unset($data->searchTerm);
+?>
 
 <div class="container">
     <div class="row first-row">

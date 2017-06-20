@@ -16,15 +16,17 @@ class search extends Controller {
 		
 		$data = $this->model->getGetData();
 		unset($data['url']);
-
+		
 		// Check if any data is posted. For this journal name should be excluded.
 		if($data) {
 
 			$data = $this->model->preProcessPOST($data);
 			
 			$query = $this->model->formGeneralQuery($data, METADATA_TABLE_L2);
-
+			
 			$result = $this->model->executeQuery($query);
+			$result['searchTerm'] = $data['description'];
+			
 			($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
 		}
 		else {

@@ -12,13 +12,21 @@ class describe extends Controller {
 		$this->photo();
 	}
 
-	public function archive($albumID = DEFAULT_ALBUM, $id = '') {
-
+	public function archive($albumID = DEFAULT_ALBUM, $id = '', $searchTrem = '') {
+		
+		$data = array();
 		$data = $this->model->getArchiveDetails($albumID, $id);
 		$result = $this->model->getAlbumDetails($albumID);
+		
+		if($searchTrem != "")	{
+			
+			$tempArray = json_decode($data->description, true);
+			$tempArray['searchTerm'] = $searchTrem;
+			$data->description =  json_encode($tempArray);
+		}
+		
 		$data->albumDescription = $result->description;
 		$data->neighbours = $this->model->getNeighbourhood($id);
-		
 		($data) ? $this->view('describe/archive', $data) : $this->view('error/index');
 	}
 

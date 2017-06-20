@@ -75,6 +75,10 @@ class viewHelper extends View {
 		$archives = $this->arrayOfArchives;
 		return $archives[$ids[0]];
     }
+    public function displayArchiveType($combinedID) {
+
+		echo '( ' . $this->getArchiveType($combinedID) . ' )';
+    }
 
     public function getPath($combinedID){
 		$archiveType = $this->getArchiveType($combinedID);
@@ -109,13 +113,15 @@ class viewHelper extends View {
         return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $pageSelected);
     }
 
-    public function displayFieldData($json, $albumID='') {
+    public function displayFieldData($json, $albumID = '') {
 
         $data = json_decode($json, true);
-        
-        //~ Pushing albumID into archive description's array
-        if(!isset($data['albumID']))
-        $data['albumID'] = $albumID;
+        $searchTerm = "";
+        if(isset($data['searchTerm']) && $data['searchTerm'] != "")
+        {
+			$searchTerm = $data['searchTerm'];
+			unset($data['searchTerm']);
+		}
         
 		$pdfFilePath = '';
         if(isset($data['id'])) {
@@ -135,13 +141,12 @@ class viewHelper extends View {
                 $ArchivePath = PHOTO_URL;
             }
             
-			$pdfFilePath = $ArchivePath . $data['albumID'] . '/' . $actualID . '/index.pdf';
+			$pdfFilePath = $ArchivePath . $albumID . '/' . $actualID . '/index.pdf';
             $phypdfFilePath = $pdfFilePath;
             $phypdfFilePath = str_replace(ARCHIVES_URL, PHY_ARCHIVES_JPG_URL, $pdfFilePath);
             $pdfFilePath = str_replace(ARCHIVES_URL, ARCHIVES_JPG_URL, $pdfFilePath);
-
-            $data['id'] = $data['albumID'] . '/' . $data['id'];
-            unset($data['albumID']);
+			
+			unset($data['albumID']);
         }
 
         $html = '';
@@ -150,18 +155,11 @@ class viewHelper extends View {
         foreach ($data as $key => $value) {
 
             if($value){
-
-                if(preg_match('/keyword/i', $key)) {
-
-                    $html .= '<li class="keywords"><strong>' . $key . ':</strong><span class="image-desc-meta">';
-                    
-                    $keywords = explode(',', $value);
-                    foreach ($keywords as $keyword) {
-       
-                        $html .= '<a href="' . BASE_URL . 'search/field/?description=' . $keyword . '">' . str_replace(' ', '&nbsp;', $keyword) . '</a> ';
-                    }
-                    
-                    $html .= '</span></li>' . "\n";
+				
+				if(preg_match("/$searchTerm/i"	, $value) && $searchTerm != "") {
+					
+					$html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta" style="background-color:#D2C17D;">' . $value . '</span></li>' . "\n";
+					//~ $html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta">' . preg_replace("/($searchTerm)/i", '<span style="background-color:#A79A66;">$1</span>', $value) . '</span></li>' . "\n";
                 }
                 else{
 
