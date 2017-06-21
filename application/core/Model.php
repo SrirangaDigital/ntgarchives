@@ -223,10 +223,18 @@ class Model {
 		$sth->bindParam(':albumID', $albumID);
 		$sth->bindParam(':id', $id);
 		$sth->execute();
-		
 		$result = $sth->fetch(PDO::FETCH_OBJ);
+		
+		$sth = $dbh->prepare('SELECT description FROM ' . METADATA_TABLE_L1 . ' WHERE albumID = :albumID');
+		$sth->bindParam(':albumID', $albumID);
+		$sth->execute();
+		
+		$data = $sth->fetch(PDO::FETCH_OBJ);
+		$result->albumDescription = $data->description;
+		
 		$dbh = null;
-
+		//~ var_dump($result); exit;
+		
 		return $result;
 	}
 }
