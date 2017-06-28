@@ -45,13 +45,9 @@
         <div class="post">
             <a href="<?=BASE_URL?>listing/photos/<?=$row->albumID?>" title="View Album">
                 <div class="fixOverlayDiv">
-					<?php if($row->imageAvailable == 1):?>
-                    <img class="img-responsive" src="<?=$row->imagePath?>">
-                    <?php else : ?>
-                    <i class="fa fa-image fa-5x noimage"></i>
-                    <?php endif; ?>
+					<img class="img-responsive" src="<?=$row->imagePath?>">
                     <div class="OverlayText">
-						<?=$row->imageCount?><br /><span class="link"><i class="fa fa-link"></i></span>
+					<?=$row->imageCount?><br /><span class="link"><i class="fa fa-link"></i></span>
 					</div>
                 </div>
                 <p class="image-desc">
@@ -103,14 +99,7 @@ $(document).ready(function(){
 					displayString = displayString + '<div class="post">';
 					displayString = displayString + '<a href="<?=BASE_URL?>listing/photos/' + obj[i].albumID + '" title="View Album">';
 					displayString = displayString + '<div class="fixOverlayDiv">';
-					if(obj[i].imageAvailable == 1)
-					{
-						displayString = displayString + '<img class="img-responsive" src="' + obj[i].imagePath + '">';
-					}
-					else
-					{
-						displayString = displayString + '<i class="fa fa-image fa-5x noimage"></i>';
-					}
+					displayString = displayString + '<img class="img-responsive" src="' + obj[i].imagePath + '">';
 					displayString = displayString + '<div class="OverlayText">';
 					displayString = displayString + obj[i].imageCount + '<br /><span class="link"><i class="fa fa-link"></i></span>';
 					displayString = displayString + '</div>';

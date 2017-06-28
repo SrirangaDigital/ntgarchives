@@ -151,7 +151,7 @@ class viewHelper extends View {
 
         $html = '';
         $html .= '<ul class="list-unstyled">';
-
+		
         foreach ($data as $key => $value) {
 
             if($value){
@@ -190,7 +190,7 @@ class viewHelper extends View {
             $mainFile = $file;
             $mainFile = preg_replace('/thumbs\//', '', $mainFile);
             // echo '<span class="">';
-
+			
             echo '<img class="img-small img-responsive" data-original="'.str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $mainFile).'" src="' . str_replace(PHY_PUBLIC_URL, PUBLIC_URL, $file) . '" >';
 
             // echo '</span>';
@@ -267,7 +267,6 @@ class viewHelper extends View {
 
         return preg_replace('/^(.*)__/', '', $combinedID);
     }
-
 }
 
 ?>

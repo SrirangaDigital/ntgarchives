@@ -108,7 +108,7 @@ class listingModel extends Model {
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh)) return null;
 		
-		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L1 . ' WHERE albumID LIKE \'' . $archive . '__%\' ORDER BY imageAvailable DESC limit ' . $start . ',' . $perPage);
+		$sth = $dbh->prepare('SELECT * FROM ' . METADATA_TABLE_L1 . ' WHERE albumID LIKE \'' . $archive . '__%\' ORDER BY imageAvailable DESC LIMIT ' . $start . ',' . $perPage);
 		$sth->execute();
 		$data = array();
 		
@@ -170,6 +170,11 @@ class listingModel extends Model {
         {
 			$photoSelected = $photos[$randNum];
 			return str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $photoSelected);
+		}
+		else
+		{
+			$photoSelected = PUBLIC_URL . "images/default-image.png";
+			return $photoSelected;
 		}
     }
     
