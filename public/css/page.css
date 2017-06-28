@@ -727,3 +727,35 @@ img.img-small {
 #contact h2{
 	color: #898989;
 }
+.typeIcon{
+/*
+	z-index:0;
+	font-size: 75px;
+	position: absolute;
+	top: -30px;
+	border: solid 1px #555; background-color: #eed;
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+*/
+	position: absolute;
+	top:-10px;
+	right:-10px;
+	width:29px;
+	height:29px;
+	border: solid 1px #555;
+	background-color: #eed;
+	box-shadow: 3px -3px rgba(0,0,0,0.4);
+	-moz-box-shadow: 3px -3px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 2px -1px rgba(0,0,0,0.4);
+	-o-box-shadow: 3px -3px rgba(0,0,0,0.4);
+	border-radius:50px;
+	
+}
+.typeIcon  > span {
+	color: #395B98;
+	font: 22px;
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	right:9px;
+	top:3px;
+}
