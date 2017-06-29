@@ -759,3 +759,26 @@ img.img-small {
 	right:9px;
 	top:3px;
 }
+.albumTitle{
+  padding: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #DDD;
+}
+.albumTitle span{
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 1.5px;
+}
+.albumTitle.Brochures{
+  background-color: #F57C00;
+}
+.albumTitle.NewsPapers{
+  background-color: #808080;
+}
+.albumTitle.Photos{
+  background-color: #0091EA;
+}

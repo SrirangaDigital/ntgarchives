@@ -1,9 +1,13 @@
 <?php
 	$albumDetails = $data['albumDetails'];
 	unset($data['albumDetails']);
-	
+	$archiveType = $viewHelper->getArchiveType($data[0]->albumID);
 ?>
-
+<script>
+$(document).ready(function(){
+        $('.post.no-border').prepend('<div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div>');
+    });
+</script>
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -62,24 +66,15 @@
 				$photoID = $viewHelper->getPhotoID($row->id); 
 				$albumID = $viewHelper->getAlbumID($row->albumID);
                 $archive = $viewHelper->getArchiveType($row->albumID);
+                (file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG')) ? $imagePath = ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG' : $imagePath = PUBLIC_URL . '/images/default-image.png';
+                $caption = $viewHelper->getDetailByField($row->description, 'desc', 'misc');
 			?>
-            <?php if(file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG')): ?>
-                <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-    			    <img src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
-                </a>
-                <?php
-                    $caption = $viewHelper->getDetailByField($row->description, 'desc');
-                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
-                ?>
-            <?php else: ?>
-                <i class="fa fa-image fa-5x noimage"></i>
-                <?php
-                    $caption = $viewHelper->getDetailByField($row->description, 'desc', 'misc');
-                    if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
-                ?>
-            <?php endif;?>
-                
-            
+            <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
+			    <img class="img-responsive" src="<?=$imagePath?>">
+            </a>
+            <?php
+                if($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
+            ?>
         </div>
 <?php } ?>
     </div>

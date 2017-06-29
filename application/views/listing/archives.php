@@ -1,6 +1,7 @@
 <?php
 	$albumDetails = $data['albumDetails']; unset($data['albumDetails']);
 	$albumID = $data[0]->albumID;
+    $archiveType = $viewHelper->getArchiveType($data[0]->albumID);
 ?>
 <div class="container">
     <div class="row first-row">
@@ -76,6 +77,7 @@
 <script>
 $(document).ready(function(){
 
+    $('.post.no-border').prepend('<div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div>');
     var processing = false;
     var albumID = <?php echo  '"' . $albumID . '"';  ?>;
     function getresult(url) {

@@ -48,12 +48,14 @@
                 <?php } ?>
             </ul>
             <?php
-                $actualID = $viewHelper->getActualID($data->id);
+                $photoID = $viewHelper->getActualID($data->id);
+                $albumID = $viewHelper->getAlbumID($data->albumID);
                 $archive = $viewHelper->getArchiveType($data->albumID);
+                (file_exists(PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $photoID . '.JPG')) ? $imagePath = ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $photoID . '.JPG' : $imagePath = PUBLIC_URL . '/images/default-image.png';
             ?>
             <div class="image-full-size" id="viewletterimages">
             <?php $albumID = $viewHelper->getAlbumID($data->albumID)?>
-                <img class="img-responsive" src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>" data-original="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/' . $actualID . '.JPG'?>">;
+                <img class="img-responsive" src="<?=$imagePath?>" data-original="<?=$imagePath?>">
             </div>
         </div>            
         <div class="col-md-3">

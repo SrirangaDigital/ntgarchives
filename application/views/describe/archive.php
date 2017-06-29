@@ -2,8 +2,9 @@
 if(isset($data->searchTerm) && $data->searchTerm != "")
 $searchTerm = $data->searchTerm;
 unset($data->searchTerm);
+$archiveType = $viewHelper->getArchiveType($data->albumID);
+echo $archiveType . "suresh" ;
 ?>
-
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -55,12 +56,13 @@ unset($data->searchTerm);
             </ul>
             <?php 
 				$albumID = $viewHelper->getAlbumID($data->albumID); 
-				$archiveType = substr_replace($viewHelper->getArchiveType($data->id), "", -1);
+				// $archiveType = substr_replace($viewHelper->getArchiveType($data->id), "", -1);
 			?>
             <?php $viewHelper->displayThumbs($data->id); ?>
         </div>            
         <div class="col-md-3">
             <div class="image-desc-full">
+            <div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div>
                 <ul class="list-unstyled">
 					<span class="subheader">Album Details</span><br/><br/><br/>
 					<?=$viewHelper->displayFieldData($data->albumDescription)?>
@@ -77,5 +79,14 @@ unset($data->searchTerm);
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?=PUBLIC_URL?>js/viewer.js"></script>
+<script>
+$(document).ready(function(){
+    var bgColor = $('.albumTitle.' + '<?=$archiveType?>').css('background-color');
+    var fgColor = $('.albumTitle span').css('color');
 
-    <script type="text/javascript" src="<?=PUBLIC_URL?>js/viewer.js"></script>
+    $('.albumTitle span').css('color', bgColor);
+    $('.albumTitle.' + '<?=$archiveType?>').css('background-color', fgColor);
+});
+</script>
+

@@ -1,6 +1,7 @@
 <?php
 	$archive = $data['Archive'];
 	unset($data['Archive']);
+	$archiveType = $viewHelper->getArchiveType($data[0]->albumID);
 ?>
 <div class="container">
     <div class="row first-row">
@@ -65,12 +66,13 @@
 <div id="hidden-data">
     <?php echo $hiddenData; ?>
 </div>
-<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
+<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div/>
 
 
 <script>
 $(document).ready(function(){
-
+	
+	$('#posts').prepend('<div class="post no-border"><div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div></div>');
     var processing = false;
     var archive = <?php echo  '"' . $archive . '"';  ?>;
 

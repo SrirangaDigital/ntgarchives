@@ -38,6 +38,7 @@
 </div>
 <?php
 	$hiddenData = $data["hidden"]; unset($data["hidden"]);
+    $archiveType = $viewHelper->getArchiveType($data[0]->albumID);
 ?>
 <div id="grid" class="container-fluid">
     <div id="posts">
@@ -69,6 +70,7 @@
 <script>
 $(document).ready(function(){
 
+    $('#posts').prepend('<div class="post no-border"><div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div></div>');
     var processing = false;
 
     function getresult(url) {
