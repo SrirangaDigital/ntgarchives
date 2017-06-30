@@ -2,26 +2,12 @@
 
 class View {
 
-    public $monthNames = array("00" => "","01" => "January","02" => "February","03" => "March","04" => "April","05" => "May","06" => "June","07" => "July","08" => "August","09" => "September","10" => "October","11" => "November","12" => "December");
-    public $monthNamesShort = array("00" => "","01" => "Jan","02" => "Feb","03" => "Mar","04" => "Apr","05" => "May","06" => "Jun","07" => "Jul","08" => "Aug","09" => "Sep","10" => "Oct","11" => "Nov","12" => "Dec");
- 	public $arrayOfArchives = array(BROCHURES => "Brochures" , NEWSPAPERS => "NewsPapers" , PHOTOS => "Photos");
+    public $arrayOfArchives = array(BROCHURES => "Brochures" , NEWSPAPERS => "NewsPapers" , PHOTOS => "Photos");
  	
 	public function __construct() {
 
 	}
 	
-	public function getJournalFromPath($path = '') {
-
-		$journal = '';
-		$url = explode('/', preg_replace('/_/', ' ', $path));
-		if (isset($url[2])) {
-		
-			$journal = array_search($url[2], $this->journalFullNames);
-		}
-		$journal = ($journal) ? $journal : '';
-		return $journal;
-	}
-
 	public function getActualPath($path = '', $folderList = array()) {
 
 		$pathRegex = str_replace('/', '\/[0-9]+\-*', $path) . '$';
@@ -113,73 +99,6 @@ class View {
 		require_once 'application/views/footer.php';
     }
 
-    public function printNavigation($navigation = array(), $ulClass = ' class="nav navbar-nav navbar-right"', $liClass = ' class="dropdown"') {
-
-        echo '<ul' . $ulClass . '>' . "\n";
-        foreach ($navigation as $mainNav) {
- 			
- 			// Trailing '/' is appended to href links, as GLOB_MARK is not added in getNavigation method
-
-            if(is_array($mainNav)){
-
-                echo "\t" . '<li' . $liClass . '>' . "\n";
-                echo "\t\t" . '<a href="' . $this->getNavLink($mainNav[0]) . '/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">' . $this->processNavPath($mainNav[0]) . ' <span class="caret"></span></a>' . "\n";
-                $this->printNavigation($mainNav[1], ' class="dropdown-menu" role="menu"', ' class="dropdown"');
-                echo "\t" . '</li>' . "\n";
-            }
-            else{
-            	
-            	$anchorText = $this->processNavPath($mainNav);
-                if($anchorText) {
-                	
-                	$isExternal = $this->checkIfExternal($mainNav);
-                	$targetBlank = ($isExternal['type'] == 'OutsideDomain') ? 'target="_blank" ' : '';
-                	$navLink = $this->getNavLink($mainNav) . '/';
-
-                	if($isExternal){
-                		
-                		$navLink = $isExternal['URL'];
-                		if($isExternal['type'] == 'InsideDomain') $navLink = BASE_URL . $navLink;
-                	}
-                	echo "\t" . '<li><a ' . $targetBlank . 'href="' . $navLink . '">' . $anchorText . '</a></li>' . "\n";
-                }
-                else{
-
-                	echo "\t" . '<li role="separator" class="divider"></li>' . "\n";
-                }
-            }
-        }
-        echo '</ul>' . "\n";
-    }
-
-    private function checkIfExternal($path) {
-
-    	$linkPath = $path . '/link.php';
-    	if(file_exists($linkPath)) {
-
-    		$handle = fopen($linkPath, 'r');
- 	    	$externalURL['URL'] = fgets($handle);
- 	    	$externalURL['type'] = (preg_match('/^http|www/', $externalURL['URL'])) ? 'OutsideDomain' : 'InsideDomain';
- 	    	return $externalURL;
-    	}
-    	return False;
-    }
-
-	private function printBreadcrumb($path) {
-
-    	$path = preg_replace('/flat/', 'Home', $path);
-    	$path = preg_replace('/\_/', ' ', $path);
-    	$pathItems = explode('/', $path);
-
-    	echo '<ol class="breadcrumb">';
-        foreach ($pathItems as $item) {
-
-        	echo '<li>' . $item . '</li>';
-        }
-        echo '</ol>';
-
-    }
-
     private function processNavPath($path) {
 
         $path = preg_replace('/\/[0-9]+\-/', '/', $path);
@@ -189,13 +108,7 @@ class View {
     	return preg_replace('/IASc/', 'IAS<span class="lower-case">c</span>', $path);
     }
 
-    private function getNavLink($path) {
-
-        $path = preg_replace('/\/[0-9]+\-/', '/', $path);
-        return htmlentities(str_replace(PHY_FLAT_URL, BASE_URL, $path), ENT_COMPAT, "UTF-8");
-    }
-	
-	private function getPageTitle($viewHelper, $path) {
+    private function getPageTitle($viewHelper, $path) {
 
 		if(preg_match('/flat/', $path)){
 
