@@ -8,7 +8,7 @@
         <!-- Column 1 -->
            <div class="col-md-12 text-center">
                 <ul class="list-inline sub-nav">
-                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">CLIPPINGS</a></li>
+                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">NEWS PAPER CLIPPINGS</a></li>
                     <li><a>·</a></li>
                     <li><a href="<?=BASE_URL?>listing/albums/<?=BROCHURES?>">Brochures</a></li>
 <!--
@@ -46,15 +46,21 @@
     <div id="posts">
 <?php foreach ($data as $row) { ?>
         <div class="post">
-			<?php $photoID = $viewHelper->getPhotoID($row->id); $albumID = $viewHelper->getAlbumID($row->albumID); $archive = $viewHelper->getArchiveType($row->albumID);?>
-			<?php if($archive != $viewHelper->arrayOfArchives[PHOTOS]) : ?>
-			<a href="<?=BASE_URL?>describe/archive/<?=$row->albumID . '/' . $row->id?>/<?=$searchTerm?>" title="View Details">
+			<?php $photoID = $viewHelper->getPhotoID($row->id); $albumID = $viewHelper->getAlbumID($row->albumID); $archiveType  = $viewHelper->getArchiveType($row->albumID);?>
+			<?php if($archiveType != $viewHelper->arrayOfArchives[PHOTOS]) : ?>
+			<a href="<?=BASE_URL?>describe/archive/<?=$row->albumID . '/' . $row->id?>/?searchTerm=<?=$searchTerm?>" title="View Details">
 				<img src="<?=$viewHelper->includeRandomThumbnailFromArchive($row->id)?>">
-				<div class="OverlayText"><p><?=$viewHelper->getDetailByField($row->description, 'Title')?><br /><small><?=$viewHelper->displayArchiveType($row->id)?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+				<div class="typeIcon">
+					<span><?=substr($archiveType, 0, 1);?></span>
+				</div>
+				<div class="OverlayText"><p><?=$viewHelper->getDetailByField($row->description, 'Title')?></p></div>
 			</a>
 			<?php else :?>
-			<a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-				<img src="<?=ARCHIVES_JPG_URL . $archive . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
+			<a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>/?searchTerm=<?=$searchTerm?>" title="View Details">
+				<img src="<?=ARCHIVES_JPG_URL . $archiveType . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
+                <div class="typeIcon">
+                    <span><?=substr($archiveType, 0, 1);?></span>
+                </div>
 				<div class="OverlayText"><p><?=$viewHelper->getDetailByField($row->description, 'desc', 'misc')?><br /><small><?=$viewHelper->displayArchiveType($row->id)?></small> <span class="link"><i class="fa fa-link"></i></span></div>
 			</a>
 		<?php endif; ?>

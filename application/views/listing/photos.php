@@ -13,7 +13,7 @@ $(document).ready(function(){
         <!-- Column 1 -->
             <div class="col-md-12 text-center">
                 <ul class="list-inline sub-nav">
-                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">CLIPPINGS</a></li>
+                    <li><a href="<?=BASE_URL?>listing/albums/<?=NEWSPAPERS?>">NEWS PAPER CLIPPINGS</a></li>
                     <li><a>·</a></li>
                     <li><a href="<?=BASE_URL?>listing/albums/<?=BROCHURES?>">Brochures</a></li>
 <!--
