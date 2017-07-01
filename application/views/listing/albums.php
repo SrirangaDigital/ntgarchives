@@ -50,9 +50,7 @@
                     <img class="img-responsive" src="<?=$row->image?>">
                     <div class="OverlayText"><?=$row->brochureCount?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
-                <p class="image-desc">
-                    <strong><?=$row->title?></strong>
-                </p>
+                <?php if($row->title) { ?><p class="image-desc"><strong><?=$row->title?></strong></p><?php } ?>
             </a>
         </div>
 <?php } ?>
