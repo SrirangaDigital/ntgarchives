@@ -528,6 +528,9 @@ a.moretag {
 .timeline-badge.info {
   background-color: #5bc0de !important;
 }
+.albumTitle.Search{
+  background-color: #00BCD4;
+}
 .timeline-title {
   margin-top: 0;
   color: inherit;
@@ -697,10 +700,10 @@ button.toggle-button{
 }
 #loader-icon {
   position: fixed;
-  top: 50%;
-  width:100%;
-  height:100%;
-  text-align:center;
+  bottom: 50px;
+  right: 50px;
+  text-align: center;
+  line-height: 40px;
   display:none;
 }
 img.img-small {
@@ -781,4 +784,22 @@ img.img-small {
 }
 .albumTitle.Photos{
   background-color: #0091EA;
+}
+.highlight{
+  background-color: #FFF9C4;
+  display: inline !important;
+}
+#no-more-icon {
+  margin: 40px auto 0;
+  width: 100px;
+  height: 100px;
+  right: 50px;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 50px;
+  line-height: 24px;
+  padding: 20px 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: #999;
 }

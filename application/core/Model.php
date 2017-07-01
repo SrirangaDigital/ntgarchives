@@ -120,9 +120,8 @@ class Model {
 	}
 
 	public function getPhotosNeighbourhood($albumID, $id) {
-
-		$archive = $this->archives[$this->getArchiveType($albumID)];
-
+		
+		$archive = $this->getArchiveType($albumID);
 		$albumID = preg_replace("/.*__(.*)/", "$1", $albumID);
 
 		$albumPath = PHY_ARCHIVES_JPG_URL . $archive . '/' . $albumID;
@@ -148,8 +147,8 @@ class Model {
 	}
 	
 	public function getArchiveType($combinedID) {
-
-        return preg_replace('/^(.*)__(.*)/', '$1', $combinedID);
+		
+		return $this->archives[preg_replace('/^([0-9]{2})__.*/', '$1', $combinedID)];
     }
 	public function getActualID($combinedID) {
 
@@ -237,6 +236,30 @@ class Model {
 		
 		return $result;
 	}
+	public function getPath($combinedID){
+
+		$archiveType = $this->getArchiveType($combinedID);
+		$ids = preg_split('/__/', $combinedID);
+		$actualPath = PHY_ARCHIVES_JPG_URL . $archiveType . '/' . $ids[1] . '/' . $ids[2];
+		return $actualPath;
+    }
+	
+	public function getArtefactThumbnail($id = ''){
+		
+        $archiveType = $this->getArchiveType($id);
+		$imgPath = $this->getPath($id);
+		if(preg_match('/^' . PHOTOS . '__/', $id)) {
+
+			$thumbnailPath = preg_replace("/(.*)\/(.*)/", "$1/thumbs/$2.JPG", $imgPath);
+		}
+		else{
+
+			$pages = glob($imgPath .  '/thumbs/*.JPG');
+			$thumbnailPath = (isset($pages[0])) ? $pages[0] : '';
+		}
+
+		return (file_exists($thumbnailPath)) ? str_replace(PHY_ARCHIVES_JPG_URL, ARCHIVES_JPG_URL, $thumbnailPath) : STOCK_IMAGE_URL . 'default-image.png';
+    }
 }
 
 ?>

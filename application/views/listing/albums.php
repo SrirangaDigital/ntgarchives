@@ -41,12 +41,7 @@
             </div>
     </div>
 </div>
-
-<?php 
-	$hiddenData = $data["hidden"]; 
-	unset($data["hidden"]);
-?>
-<div id="grid" class="container-fluid">
+<div id="grid" class="container-fluid"  data-page="1" data-go="1">
     <div id="posts">
 <?php foreach ($data as $row) { ?>
         <div class="post">
@@ -63,30 +58,37 @@
 <?php } ?>
     </div>
 </div>
-<div id="hidden-data">
-    <?php echo $hiddenData; ?>
+
+<div id="loader-icon">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br />
+    Loading more items
 </div>
-<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div/>
 
 
 <script>
 $(document).ready(function(){
 	
 	$('#posts').prepend('<div class="post no-border"><div class="albumTitle <?=$archiveType?>"><span><?=$archiveType?></span></div></div>');
-    var processing = false;
     var archive = <?php echo  '"' . $archive . '"';  ?>;
 
     function getresult(url) {
-        processing = true;
         $.ajax({
             url: url,
             type: "GET",
+            beforeSend: function(){
+            $('#loader-icon').show();
+			},
             complete: function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
-                processing = true;
-                console.log(data);
+				$('#grid').attr('data-go', '0');
+                if(data == "\"noData\"") {
+
+					$('#grid').append('<div id="no-more-icon">No more<br />items<br />to show</div>');
+					$('#loader-icon').hide();
+					return;
+				}
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
                 var $grid = $('#posts').masonry({
                     gutter: gutter,
@@ -118,7 +120,7 @@ $(document).ready(function(){
                     function(){
                         $content.fadeIn(500);
                         $grid.masonry('appended', $content);
-                        processing = false;
+                        $('#grid').attr('data-go', '1');
                     }
                 );                                     
 
@@ -130,17 +132,13 @@ $(document).ready(function(){
     }
     $(window).scroll(function(){
         if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.65){
-            if($(".lastpage").length == 0){
-                var pagenum = parseInt($(".pagenum:last").val()) + 1;
-                if(!processing)
-                {
-                    getresult(base_url+'listing/albums/' + archive + '/?page='+pagenum);
-                }
-            }                        
+			if($('#grid').attr('data-go') == '1') 
+			{
+               var pagenum = parseInt($('#grid').attr('data-page')) + 1;
+               $('#grid').attr('data-page', pagenum);
+				getresult(base_url+'listing/albums/' + archive + '/?page='+pagenum);
+			}
         }
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95){
-			document.getElementById("loader-icon").display = 'block';
-		}
     });
 });     
 </script>

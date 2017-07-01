@@ -72,8 +72,7 @@ class viewHelper extends View {
     public function getArchiveType($combinedID) {
 
 		$ids = preg_split('/__/', $combinedID);
-		$archives = $this->arrayOfArchives;
-		return $archives[$ids[0]];
+		return $this->arrayOfArchives[$ids[0]];
     }
     public function displayArchiveType($combinedID) {
 

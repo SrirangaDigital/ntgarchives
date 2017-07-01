@@ -88,35 +88,79 @@ class searchModel extends Model {
 		return $data;
 	}
 
-	public function formGeneralQuery($data, $table, $orderBy = '') {
+	public function formGeneralQuery($data, $table, $orderBy = '', $limit = '') {
 
 		$data = $this->regexFilter($data);
 
 		$sqlFilter = (count($data['filter'] > 1)) ? implode(' and ', $data['filter']) : array_values($data['filter']);
-		$sqlStatement = 'SELECT * FROM ' . $table . ' WHERE ' . $sqlFilter . $orderBy;
+		$sqlStatement = 'SELECT * FROM ' . $table . ' WHERE ' . $sqlFilter . $orderBy . $limit;
 
 		$data['query'] = $sqlStatement;
 
 		return $data;
 	}
 
-	public function handleSpecialCases($data) {
+	public function getSearchResults($data){
 
-		// This method allows us to do a 'this or that' kind of search; special cases need to be listed here
-		$return = array();
-		foreach ($data as $word) {
-			
-			$newWord = preg_replace('/bangalore/', 'bengaluru|bangalore', $word);
-			array_push($return, $newWord);
+		$perPage = 10;
+		$page = $data["page"];
+		$description = $data["description"];
+		unset($data['page']);
+
+		$limit = ' LIMIT ' . ($page - 1) * $perPage . ', ' . $perPage;
+		
+		$data = $this->preProcessPOST($data);
+		$query = $this->formGeneralQuery($data, METADATA_TABLE_L2, ' ORDER BY id', $limit);
+		
+		$dbh = $this->db->connect(DB_NAME);
+		$sth = $dbh->prepare($query['query']);
+		$sth->execute($query['words']);
+
+		$data = [];
+		while($result = $sth->fetch(PDO::FETCH_OBJ)) {
+
+			$result->randomImagePath = $this->getArtefactThumbnail($result->id);
+			$result->field = $this->getMatchingField($result->description, $description);
+			array_push($data, $result);
 		}
-		return $return;
-	}
+		
+		$dbh = null;
 
-	public function searchPatches($data) {
+		if(!empty($data)) {
+			
+			$data['description'] = $description;
+		}
+		else {
 
-		// Special cases in searches are dealt with here
-		if(isset($data['authors'])) $data['authors'] = '"full":".*' . $data['authors'] . '[^"]*","first"';
+			$data = 'noData';
+		}
+
 		return $data;
+	}
+	
+	public function getMatchingField($description, $searchTerm){
+
+		$searchTerm = $searchTerm;
+		$terms = explode(' ', $searchTerm);
+		$termsRegex = implode('|', $terms);
+		$descArray = json_decode($description, true);
+
+		$matches = [];
+		if(isset($descArray['Type'])) array_push($matches, '<strong>Type</strong> : ' . $descArray['Type']);
+
+		foreach ($terms as $term) {
+			
+			foreach ($descArray as $key => $value) {
+			
+				if(preg_match('/' . $term . '/i', $value)){
+
+					$value = preg_replace("/($termsRegex)/i", "<span class=\"highlight\">$1</span>", $value);
+					array_push($matches, '<strong>' . $key . '</strong> : ' . $value);
+					unset($descArray{$key});
+				}
+			}			
+		}
+		return implode($matches, '<br />');
 	}
 }
 

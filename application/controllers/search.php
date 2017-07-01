@@ -19,15 +19,24 @@ class search extends Controller {
 		
 		// Check if any data is posted. For this journal name should be excluded.
 		if($data) {
+			
+			if(!(isset($data["page"]))){
+			
+				$data["page"] = 1;
+			}
 
-			$data = $this->model->preProcessPOST($data);
-			
-			$query = $this->model->formGeneralQuery($data, METADATA_TABLE_L2);
-			
-			$result = $this->model->executeQuery($query);
+			$result = $this->model->getSearchResults($data);
 			$result['searchTerm'] = $data['description'];
 			
-			($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
+			if($data["page"] == 1){
+		
+				($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
+			}
+			else{
+			
+				echo json_encode($result);
+			}
+	
 		}
 		else {
 

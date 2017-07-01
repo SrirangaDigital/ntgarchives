@@ -73,7 +73,10 @@
 <div id="hidden-data">
     <?php echo $hiddenData; ?>
 </div>
-<div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /></div>
+<div id="loader-icon">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br />
+    Loading more items
+</div>
 <script>
 $(document).ready(function(){
 
@@ -85,6 +88,9 @@ $(document).ready(function(){
         $.ajax({
             url: url,
             type: "GET",
+            beforeSend: function(){
+				$('#loader-icon').show();
+			},
             complete: function(){
                 $('#loader-icon').hide();
             },
@@ -133,11 +139,8 @@ $(document).ready(function(){
                 {
                     getresult(base_url+'listing/archives/' + albumID + '/?page='+pagenum);
                 }
-            }                        
+            }
         }
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95){
-			document.getElementById("loader-icon").display = 'block';
-		}
     });
 });     
 </script>
