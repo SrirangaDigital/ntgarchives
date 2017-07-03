@@ -84,15 +84,12 @@ class listingModel extends Model {
 		
 		if(!empty($data)){
 			
-			$data["hidden"] = '<input type="hidden" class="pagenum" value="' . $page . '" />';
+			$data['albumDetails'] = $this->getAlbumDetails($albumID);
 		}
 		else{
 
-			$data["hidden"] = '<div class="lastpage"></div>';	
-		}
-		
-		$data['albumDetails'] = $this->getAlbumDetails($albumID);
-		
+			$data = 'noData';
+		}	
 		
 		return $data;
 	}
