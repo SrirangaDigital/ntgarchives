@@ -1,8 +1,3 @@
-<?php
-	$searchTerm = $data['searchTerm'];
-	unset($data['searchTerm']);
-?>
-
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -41,30 +36,96 @@
             </div>
     </div>
 </div>
-
-<div id="grid" class="container-fluid">
+<?php
+	$searchTerm = $data['searchTerm'];
+	unset($data['searchTerm']);
+	$description = $data["description"]; unset($data["description"]);
+?>
+<div id="grid" class="container-fluid" data-page="1" data-go="1">
     <div id="posts">
+        <div class="post no-border"></div>
 <?php foreach ($data as $row) { ?>
         <div class="post">
-			<?php $photoID = $viewHelper->getPhotoID($row->id); $albumID = $viewHelper->getAlbumID($row->albumID); $archiveType  = $viewHelper->getArchiveType($row->albumID);?>
-			<?php if($archiveType != $viewHelper->arrayOfArchives[PHOTOS]) : ?>
-			<a href="<?=BASE_URL?>describe/archive/<?=$row->albumID . '/' . $row->id?>/?searchTerm=<?=$searchTerm?>" title="View Details">
-				<img src="<?=$viewHelper->includeRandomThumbnailFromArchive($row->id)?>">
-				<div class="typeIcon">
-					<span><?=substr($archiveType, 0, 1);?></span>
-				</div>
-				<div class="OverlayText"><p><?=$viewHelper->getDetailByField($row->description, 'Title')?></p></div>
-			</a>
-			<?php else :?>
-			<a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>/?searchTerm=<?=$searchTerm?>" title="View Details">
-				<img src="<?=ARCHIVES_JPG_URL . $archiveType . '/' . $albumID . '/thumbs/' . $photoID . '.JPG'?>">
-                <div class="typeIcon">
-                    <span><?=substr($archiveType, 0, 1);?></span>
-                </div>
-				<div class="OverlayText"><p><?=$viewHelper->getDetailByField($row->description, 'desc', 'misc')?><br /><small><?=$viewHelper->displayArchiveType($row->id)?></small> <span class="link"><i class="fa fa-link"></i></span></div>
-			</a>
-		<?php endif; ?>
+			<?php
+				$method = 'archive';
+				if(preg_match('/^' . PHOTOS . '__.*/', $row->id))
+				$method = 'photo';
+			?>
+            <a href="<?=BASE_URL?>describe/<?=$method?>/<?=$row->albumID . '/' . $row->id . '/?searchTerm=' . $searchTerm?>" title="View Details">
+                <img src="<?=$row->randomImagePath?>">
+                <?php if($row->field) { ?><p class="image-desc"><?=$row->field?></p><?php } ?>
+            </a>
         </div>
 <?php } ?>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+    $('.post.no-border').prepend('<div class="albumTitle Search"><span><i class="fa fa-search"></i> ' + '<?=$description?>' + '</span></div>');
+    
+    function getresult(url) {
+        $('#grid').attr('data-go', '0');
+        $.ajax({
+            url: url,
+            type: "GET",
+            beforeSend: function(){
+            $('#loader-icon').show();
+			},
+            complete: function(){
+                $('#loader-icon').hide();
+            },
+            success: function(data){
+                $('#grid').attr('data-go', '0');
+                if(data == "\"noData\"") {
+
+					$('#grid').append('<div id="no-more-icon">No more<br />items<br />to show</div>');
+					$('#loader-icon').hide();
+					return;
+				}
+                var gutter = parseInt(jQuery('.post').css('marginBottom'));
+                var $grid = $('#posts').masonry({
+                    gutter: gutter,
+                    itemSelector: '.post',
+                    columnWidth: '.post'
+                });
+                var obj = JSON.parse(data);
+                var displayString = "";
+                for(i=0;i<Object.keys(obj).length-2;i++)
+                {   
+					displayString = displayString + '<div class="post">';   
+                        displayString = displayString + '<a href="' + <?='base_url'; ?> + 'describe/archive/' + obj[i].albumID + '/' + obj[i].id + '/?searchTerm=' + '<?=$description?>' + '" title="View Details">';
+                            displayString = displayString + '<img class="img-responsive" src="' +  obj[i].randomImagePath + '">';
+                            if(obj[i].field){displayString = displayString + '<p class="image-desc">' + obj[i].field + '</p>'};
+                        displayString = displayString + '</a>';
+                    displayString = displayString + '</div>';
+                    
+                }
+                
+
+                var $content = $(displayString);
+                $content.css('display','none');
+                $grid.append($content).imagesLoaded(
+                    function(){
+                        $content.fadeIn(500);
+                        $grid.masonry('appended', $content);
+                        $('#grid').attr('data-go', '1');
+                    }
+                );                                     
+
+               displayString = "";
+            },
+            error: function(){console.log("Fail");}             
+      });
+    }
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.65){
+			if($('#grid').attr('data-go') == '1') 
+			{
+				var pagenum = parseInt($('#grid').attr('data-page')) + 1;
+				$('#grid').attr('data-page', pagenum);
+                getresult(base_url+'search/field/?description=' + '<?=$description?>' +'&page='+pagenum);
+			}
+        }
+    });
+});
+</script>

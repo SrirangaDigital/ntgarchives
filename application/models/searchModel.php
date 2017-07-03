@@ -123,7 +123,6 @@ class searchModel extends Model {
 			$result->field = $this->getMatchingField($result->description, $description);
 			array_push($data, $result);
 		}
-		
 		$dbh = null;
 
 		if(!empty($data)) {
@@ -134,7 +133,7 @@ class searchModel extends Model {
 
 			$data = 'noData';
 		}
-
+		//~ var_dump($data); exit;
 		return $data;
 	}
 	
