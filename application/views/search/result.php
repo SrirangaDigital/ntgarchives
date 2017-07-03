@@ -59,6 +59,10 @@
 <?php } ?>
     </div>
 </div>
+<div id="loader-icon">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br />
+    Loading more items
+</div>
 <script>
 $(document).ready(function(){
     $('.post.no-border').prepend('<div class="albumTitle Search"><span><i class="fa fa-search"></i> ' + '<?=$description?>' + '</span></div>');
@@ -90,10 +94,15 @@ $(document).ready(function(){
                 });
                 var obj = JSON.parse(data);
                 var displayString = "";
+                var method = 'archive';
                 for(i=0;i<Object.keys(obj).length-2;i++)
-                {   
-					displayString = displayString + '<div class="post">';   
-                        displayString = displayString + '<a href="' + <?='base_url'; ?> + 'describe/archive/' + obj[i].albumID + '/' + obj[i].id + '/?searchTerm=' + '<?=$description?>' + '" title="View Details">';
+                {
+                    var re = new RegExp("^" + photos + "");
+                    if(re.test(obj[i].id))method = 'photo';
+
+                    
+                    displayString = displayString + '<div class="post">';   
+                        displayString = displayString + '<a href="' + <?='base_url'; ?> + 'describe/' + method + '/' + obj[i].albumID + '/' + obj[i].id + '/?searchTerm=' + '<?=$description?>' + '" title="View Details">';
                             displayString = displayString + '<img class="img-responsive" src="' +  obj[i].randomImagePath + '">';
                             if(obj[i].field){displayString = displayString + '<p class="image-desc">' + obj[i].field + '</p>'};
                         displayString = displayString + '</a>';

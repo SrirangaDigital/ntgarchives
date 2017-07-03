@@ -43,7 +43,10 @@
     <link rel="stylesheet" href="<?=PUBLIC_URL?>css/viewer.css">
 
 
-    <script type="text/javascript">var base_url = "<?= BASE_URL?>";</script>
+    <script type="text/javascript">
+        var base_url = "<?=BASE_URL?>";
+        var photos = "<?=PHOTOS?>";
+    </script>
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="<?=PUBLIC_URL?>images/favicon.png">

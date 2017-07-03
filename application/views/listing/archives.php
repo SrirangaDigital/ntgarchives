@@ -45,7 +45,7 @@
 	$hiddenData = $data["hidden"]; 
 	unset($data["hidden"]);
 ?>
-<div id="grid" class="container-fluid">
+<div id="grid" class="container-fluid" data-page="1" data-go="1">
     <div id="posts">
         <div class="post no-border">
             <div class="image-desc-full">
@@ -95,8 +95,8 @@ $(document).ready(function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
+                $('#grid').attr('data-go', '0');
 				$(".loader").hide();
-                processing = true;
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
                 var $grid = $('#posts').masonry({
                     gutter: gutter,
