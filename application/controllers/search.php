@@ -26,26 +26,18 @@ class search extends Controller {
 			}
 			$result = $this->model->getSearchResults($data);
 			
-			if($result != 'noData')
-			{
-				$result['searchTerm'] = $data['description'];
-			
-				if($data["page"] == 1){
-					($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
-				}
-				else{
-					echo json_encode($result);
-				}
-			}
-			elseif ($result != 'noData' && $data['page'] == 1)
+			if($result == 'noData' && $data["page"] == 1)
 			{
 				$this->view('error/noResults');
 			}
-			else
+			elseif($result != 'noData' && $data["page"] == 1)
 			{
+				$result['searchTerm'] = $data['description'];
+				($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
+			}
+			else{
 				echo json_encode($result);
 			}
-	
 		}
 		else {
 			$this->view('error/noResults');
