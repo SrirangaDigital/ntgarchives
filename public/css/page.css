@@ -804,7 +804,7 @@ img.img-small {
   color: #999;
 }
 #tooltip{
-
+  display:none;
   background-color: #85929E;
   color: #FFF;
   position: absolute;

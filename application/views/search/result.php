@@ -29,7 +29,7 @@
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" onclick="return validateTextField();" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
-                                <div id="tooltip" style="display:none;">Search Term is required</div>
+                                <div id="tooltip">Search Term is required</div>
                             </div>
                         </form>
 
