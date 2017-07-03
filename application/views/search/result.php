@@ -27,15 +27,18 @@
                             <div class="input-group add-on">
                                 <input type="text" class="form-control" placeholder="Keywords" name="description" id="description">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    <button class="btn btn-default" onclick="return validateTextField();" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
+                                <div id="tooltip" style="display:none;">Search Term is required</div>
                             </div>
                         </form>
+
                     </li>
                 </ul>
             </div>
     </div>
 </div>
+
 <?php
 	$searchTerm = $data['searchTerm'];
 	unset($data['searchTerm']);

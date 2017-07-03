@@ -155,3 +155,18 @@ function buildMasonry(){
     
     }
 }
+function validateTextField(){
+
+    var description = document.getElementById("description");
+    
+    if(description.value == ""){
+
+        $('#tooltip').show().delay(1000).fadeOut();;
+        return false;
+    }
+    else{
+        
+        return true;
+    }
+    
+}
