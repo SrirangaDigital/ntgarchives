@@ -8,7 +8,6 @@
                     <div class="mainpage">
 						<h1>Natarang Pratishthan</h1>
                         <h4>Archive and Research Centre for Indian Theatre, Delhi</h4>
-						<p>The Natarang Pratishthan was set up in 1989 to fill the void in the knowledge and research of theatre activities, particularly in North India where theatre movement, though multifaceted and innovative, has not been collectively recorded at any one centre for posterity. Established by eminent author, poet and critic Nemichandra Jain as a charitable trust, the Pratishthan has since grown into a valuable resource centre for Indian and Asian theatre.</p>
                     </div>
                 </div>
             </div>
@@ -55,33 +54,6 @@
                         <p>Photographs</p>
                     </a>
                 </li>
-<!--
-                <li class="stat-elem">
-                    <a href="#">
-                        <h2><i class="fa fa-book"></i></h2>
-                        <p>Books</p>
-                    </a>
-                </li>
-                
-                <li class="stat-elem">
-                    <a href="#">
-                        <h2><i class="fa fa-volume-up"></i></h2>
-                        <p>Multimedia</p>
-                    </a>
-                </li>
-                <li class="stat-elem">
-                    <a href="#">
-                        <h2><i class="fa fa-file-archive-o"></i></h2>
-                        <p>Journals</p>
-                    </a>
-                </li>                
-                <li class="stat-elem">
-                    <a href="<?=BASE_URL?>listing/albums/04">
-                        <h2><i class="fa fa-th"></i></h2>
-                        <p>Miscellaneous</p>
-                    </a>
-                </li>
--->
             </ul>
         </div>
     </div>

@@ -3,7 +3,6 @@ if(isset($data->searchTerm) && $data->searchTerm != "")
 $searchTerm = $data->searchTerm;
 unset($data->searchTerm);
 $archiveType = $viewHelper->getArchiveType($data->albumID);
-echo $archiveType . "suresh" ;
 ?>
 <div class="container">
     <div class="row gap-above-med">

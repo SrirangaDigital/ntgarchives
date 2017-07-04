@@ -803,12 +803,16 @@ img.img-small {
   line-height: 18px;
   color: #999;
 }
+
 #tooltip{
   display:none;
   background-color: #85929E;
   color: #FFF;
+  text-align: center;
   position: absolute;
-  width:170px;
-  height: 20px;
-  margin: 6px 0px 30px 10px;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0px 8px;
+  padding-top: 4px;
 }

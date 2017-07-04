@@ -97,7 +97,6 @@ $(document).ready(function(){
     }
     $(window).scroll(function(){
         if ($(window).scrollTop() >= ($(document).height() - $(window).height())* 0.6 ){
-			console.log("suresh");
             if($(".lastpage").length == 0){
                 var pagenum = parseInt($(".pagenum:last").val()) + 1;
                 // console.log(pagenum);
