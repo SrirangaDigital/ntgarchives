@@ -33,7 +33,7 @@ class Controller {
 		// Actual path is given path for dynamic pages
 		if(!($actualPath)) $actualPath = $path;
 		// Show Page
-		(preg_match('/flat|error|prompt/', $path)) ? $view->showFlatPage($data, $path, $actualPath, $navigation) : $view->showDynamicPage($data, $path, $actualPath, $navigation);
+		(preg_match('/flat|prompt/', $path)) ? $view->showFlatPage($data, $path, $actualPath, $navigation) : $view->showDynamicPage($data, $path, $actualPath, $navigation);
 	}
 
 	public function isLoggedIn() {
