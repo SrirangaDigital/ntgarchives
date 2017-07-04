@@ -157,8 +157,8 @@ class viewHelper extends View {
 				
 				if(preg_match("/$searchTerm/i"	, $value) && $searchTerm != "") {
 					
-					$html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta" style="background-color:#D2C17D;">' . $value . '</span></li>' . "\n";
-					//~ $html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta">' . preg_replace("/($searchTerm)/i", '<span style="background-color:#A79A66;">$1</span>', $value) . '</span></li>' . "\n";
+					// $html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta" style="background-color:#D2C17D;">' . $value . '</span></li>' . "\n";
+					$html .= '<li><strong>' . $key . ':</strong><span class="image-desc-meta">' . preg_replace("/($searchTerm)/i", '<span class="highlight">$1</span>', $value) . '</span></li>' . "\n";
                 }
                 else{
 
