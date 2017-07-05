@@ -3,7 +3,7 @@
     <div class="row first-row">
         <div class="col-md-12 clear-paddings">
             <div class="fixOverlayDiv">
-                <img class="img-responsive gap-above" src="<?=PUBLIC_URL?>images/stock/slide.jpg">
+                <img class="img-responsive gap-above" src="<?=PUBLIC_URL?>images/stock/4650.jpg">
                 <div class="OverlayTextMain">
                     <div class="mainpage">
 						<h1>Natarang Pratishthan</h1>
