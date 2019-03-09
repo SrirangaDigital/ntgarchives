@@ -1,6 +1,6 @@
 <?php
 
-define('HOST_IP', 'http://192.168.1.12/');
+define('HOST_IP', 'http://192.168.1.66/');
 define('BASE_URL', HOST_IP . 'ntgarchives/');
 define('PUBLIC_URL', BASE_URL . 'public/');
 define('XML_SRC_URL', BASE_URL . 'md-src/xml/');
@@ -38,9 +38,9 @@ define('ntgARCHIVES_USER', 'root');
 define('ntgARCHIVES_PASSWORD', 'mysql');
 
 // Git config
-define('GIT_USER_NAME', 'shruthisdst');
-define('GIT_PASSWORD', 'shruthitr14');
+define('GIT_USER_NAME', 'sriranga-deploy');
+define('GIT_PASSWORD', 'xxx');
 define('GIT_REPO', 'github.com/shivasdst/ntgarchives.git');
 define('GIT_REMOTE', 'https://' . GIT_USER_NAME . ':' . GIT_PASSWORD . '@' . GIT_REPO);
-define('GIT_EMAIL', 'shruthitr.nayak@gmail.com');
+define('GIT_EMAIL', 'accounts@srirangadigital.com');
 ?>

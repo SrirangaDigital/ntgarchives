@@ -3,6 +3,12 @@
 	unset($data['searchTerm']);
 	$description = $data["description"]; unset($data["description"]);
 ?>
+<ul class="nav nav-tabs nav-justified">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Menu 1</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
 <div id="grid" class="container-fluid" data-page="1" data-go="1">
     <div id="posts">
         <div class="post no-border"></div>
