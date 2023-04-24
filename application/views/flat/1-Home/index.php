@@ -25,7 +25,7 @@
             </p>
             <p>
             Its outreach activities have made space for discussions and seminars on performances, critics, actors, directors, subject material and more, so it can contribute back to theatre not only in terms of past material, but also as a catalyst for currently needed intelectual debate.</p>
-			<p id="right"><a href="<?=BASE_URL?>Natarang_Pratishthan">More ...</a></p>
+			<p id="right"><a href="<?=BASE_URL?>Natarang_Pratishthan">More ....</a></p>
          </div>
          <div class="col-md-1"></div>
     </div>    
