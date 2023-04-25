@@ -20,6 +20,7 @@
 		<div class="col-md-1"></div>
         <div class="col-md-10">
 			<h2>Natarang Pratishthan</h2>
+            <br />
             <p>The Natarang Pratishthan was set up in 1989 to fill the void in the knowledge and research of theatre activities, particularly in North India where theatre movement, though multifaceted and innovative, has not been collectively recorded at any one centre for posterity. Established by eminent author, poet and critic Nemichandra Jain as a charitable trust, the Pratishthan has since grown into a valuable resource centre for Indian and Asian theatre.</p>            
 			<p>Initially started as part of a large personal collection of newspaper clippings, brochures, books, journals, scripts, photographs, invitation cards, cassettes and seminar papers, it has since grown to include rare collections that have been gifted, or bought, by the Pratishthan for purposes of archival documentation. More recently, the Pratishthan has also supported theatre activities directly, by promoting weekend theatre projects, or theatre festivals. Today, it is one of India’s most comprehensive research centres for the study of theatre over the last century.
             </p>
